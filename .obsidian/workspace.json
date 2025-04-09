@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Open = Safe proposal"
             }
+          },
+          {
+            "id": "b97e04927a1f40d4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Open = Safe proposal.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Open = Safe proposal"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -168,12 +183,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "46cde97815478155",
+  "active": "b97e04927a1f40d4",
   "lastOpenFiles": [
-    "EU Funding Proposal_ Open=Safe - Community-Based R.docx",
-    "Detailed Budget Breakdown for Open = Safe workshops.docx",
+    "lu352605fw8g.tmp",
     "ChatGPT proposal.md.pdf",
     "Open = Safe proposal.md",
+    "Open=Safe Real‑Time Radiation Monitoring for Canada.pdf",
+    "Open=Safe Real‑Time Radiation Monitoring for Canada.md",
+    "Open = Safe proposal fixed.pdf",
+    "EU Funding Proposal_ Open=Safe - Community-Based R.docx",
+    "Detailed Budget Breakdown for Open = Safe workshops.docx",
     "ChatGPT proposal.pdf",
     "EU Funding Proposal.md",
     "Welcome.md",
