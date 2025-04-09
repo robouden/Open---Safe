@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "d85f8f1d16200e13",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e7d26dbee18414c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "46cde97815478155",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Open = Safe proposal.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Open = Safe proposal"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f7cd37a430b63bf6",
+    "type": "split",
+    "children": [
+      {
+        "id": "01830475c562563d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7fa4b1153fb101cc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "55a797c883d7eda6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "7b9908336d8c82f3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "e72a2a2503c0b0b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "cbd1b04e0801ba56",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ac6f723cacd26864",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "EU Funding Proposal.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for EU Funding Proposal"
+            }
+          },
+          {
+            "id": "36eef18f235b8075",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "EU Funding Proposal.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from EU Funding Proposal"
+            }
+          },
+          {
+            "id": "5e60e767448d1246",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3cc66316985fd734",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "EU Funding Proposal.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of EU Funding Proposal"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "46cde97815478155",
+  "lastOpenFiles": [
+    "EU Funding Proposal_ Open=Safe - Community-Based R.docx",
+    "Detailed Budget Breakdown for Open = Safe workshops.docx",
+    "ChatGPT proposal.md.pdf",
+    "Open = Safe proposal.md",
+    "ChatGPT proposal.pdf",
+    "EU Funding Proposal.md",
+    "Welcome.md",
+    "EU Funding Proposal_ Open=Safe - Community-Based R.pdf"
+  ]
+}
