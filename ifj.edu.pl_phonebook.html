@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <style>@media all
+{
+
+.page-break	{ display: none; }
+.wykaz { margin-top:10px;}
+#wynik { clear:both;}
+   
+/*.mono { font-family:Lucida Console,Courier New,monospace; }*/
+.menu_lbl{ text-align:center; width: 1.4em; display: inline-block; padding-right:5px; }
+/* ze strony instytutu - do usuniecia po zintegrowaniu */
+
+.ifj-room {
+    background-image: url("img/ifjroom2.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 0 none;
+    width: 20px;
+    display: inline-block;
+    padding-right:25px;
+   /* float: left;*/
+}
+.ifj-tel {
+    background-image: url("img/ifjtel.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 0 none;
+     display: inline-block;
+     width: 16px;
+     height:16px;
+     padding-right:25px;
+     /* float: left;*/
+}
+.ifj-em {
+    background-image: url("img/ifjem.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 0 none;
+    display: inline-block;
+     width: 16px;
+     height:16px;
+     padding-right:25px;
+}
+.blue { color: #0376B1; }
+/*h2,h3,h4 {
+    font-weight: normal;
+    padding: 5px 0;
+}
+h2 { font-size: 16px; margin:10px; }
+h3 { font-size: 14px; margin:8px; }
+h4 { font-size: 12px; }*/
+
+h1 {
+    /*border-bottom: 1px solid #AAAAAA;*/
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1.2em;
+    margin-top:0;
+    margin-bottom: 10px;
+    padding: 3px 0 1px;
+}
+#matter ul a.zwykly{ color:#006B66;}
+.like_cnt{
+    font-size: 0.9em;
+  }
+/*#phonebook_help_div p, #phonebook_help_div li{
+    font-size: 90%;
+}*/
+
+p.aktualiz{
+	font-size:0.9em;
+}
+
+/* DLA trzymania info o aktualizacji na dole 
+.size-xs p{
+	font-size:10px;
+	text-align:center;
+	background-color: #f0f0f0;
+	margin: 0 auto;
+	height:70 px;
+}
+.size-xs{
+    position: absolute;
+    bottom: 0;
+    height:94px;
+	width:95%;
+  }
+#matter{
+	position: relative;
+    padding-bottom: 100px;
+}
+ Koniec DLA trzymania info o aktualizacji */
+
+a.hlp_anch{font-size: 1.1em;
+}
+p.cnt {
+    /*font-family: sans-serif,Helvetica,Arial;*/
+    /*font-size: 12px;*/
+    line-height:1.5em;
+    margin: 0;
+    padding: 2px 5px;
+    text-align: center;
+}
+a img, p.cnt img { display:inline; border-style:none;}
+img.ikonka { margin: 0 5px 6px 1px; border:none; display:inline; }
+#searchForm, #adv_search_form {
+   background-color: #f1f5f8;
+    border: 1px solid #b9c9d9; 
+    border-radius: 4px;
+    /*height: 82px;*/
+    text-align: left;
+    display: block; 
+	float: none;
+    max-width: 490px; 
+	overflow: hidden;
+}
+/* koniec ze strony instytutu */
+
+h1.info_tel { margin-top: 0px; }
+h1.info_mail { margin-top: 9px; }
+a.info_tel, a.info_mail { margin: 5px 0 8px 0; display:inline-block;
+/*color:#006B66;*/ }
+/*#matter a.info_tel:hover, #matter a.info_mail:hover { color:#006B66; }*/
+
+hr  { 
+	/*border-width:0;
+	height: 1px;
+	background-color:#70a090;
+	color: #70a090;*/
+
+    height: 1px;
+	border-top:1px dashed #70a090;
+    border-width:1px 0 0 0;
+    }
+
+#searchForm{
+    margin: 15px auto;
+    padding:10px 6px 10px 18px;
+    /*border-top:0;*/
+}
+
+#adv_search_form{
+    /*height: 295px;*/
+    /*width:475px;*/
+    margin: 15px auto;
+    padding:10px;
+}
+#adv_search_form input[type=button], #adv_search_form input[type=submit]
+	{
+    margin-left:152px;
+}
+#adv_search_form label{
+    width: 132px;
+}
+#adv_search_form label.wyb{
+    width: auto;
+    float:none;
+    padding-right:2px;
+    font-size:0.8em;
+    /*height:18px;*/
+    /*background-color:#70a090;*/
+    margin-left: 15px;
+    margin-right:0;
+  /*  vertical-align:text-top;*/
+}
+#adv_search_form input[type=radio] {
+    display: inline-block;
+    padding-top:3px;
+    vertical-align:sub;
+}
+label.wyb {
+    font-size: 90%;
+	}
+.top_menu_elem  { margin-right: 8px; padding: 0 6px;}
+.top_menu_letter{ padding: 0 3.5px; }
+.info { color: green; font-size:150%; padding:10px;}
+.center { text-align:center;}
+
+/* TYLKO DLA SZUKANIA */
+
+#search_people_form select, #search_people_form option {
+		font-family: monospace;
+		font-size: 12px;
+	}
+.name_desc { 
+		float:left; 
+		width: 210px;
+		font-size:85%;
+		text-align:right;
+		margin:4px 8px 0 0;
+		color:#06a;
+	}
+.adv_search { 
+		font-size:85%;
+		text-align:left;
+		margin:4px 8px 0 30px;
+		color:#049;
+	}
+
+.fl_left{float:left;margin-right:12px;}
+.align_right{text-align:right;}
+.my_width{width:100px;
+background-color: #9fb;}
+.div_chk_srch{ background-color: #afc;width:30px;height:20px;display:inline-block;}
+
+.marg {margin-left:10px;}
+	
+/*#szukaj*/
+.srch
+	{
+		border: 1px solid #b9c9d9;
+		margin: 20px 10px 6px 16px;
+		padding: 5px;
+	}
+.srch_adv
+	{
+		border: 1px solid #b9c9d9;
+	}
+
+
+.lewy {
+	float:left;
+	width: 208px;
+	/*background-color:#0aa;*/
+	display:inline-block;
+	}
+.lewy label {
+	color: #313131;
+   /* font-family: Trebuchet MS;*/
+    font-size: 90%;
+    }
+  
+.zaczyna {
+	float:left;
+	padding-left:16px;
+	margin-top:1px;
+	/*margin-left: 11px;*/
+	/*background-color:#0bb;*/
+	display:inline-block;
+	}
+	
+.zawiera {
+	float:left;
+	margin-top:1px;
+	margin-left: 20px;
+	/*background-color:#0dd;*/
+	display:inline-block;
+	}
+
+.zaczyna input, .zawiera input
+	{
+	margin-left:25px;
+	margin-top:5px;
+	}
+#kryt{
+	font-size: 95%;
+	width:205px;
+	margin: 3px 0 6px 0;
+	}
+.zaczyna label, .zawiera label
+	{
+	 /*font-family: Trebuchet MS;*/
+	 color:#333;
+     font-size: 90%;
+	}
+	
+/* koniec dla szukania */
+	
+#zaklad{ text-transform:uppercase; }
+	
+#sel_person_form label, .form_with_labels label{
+    float: left;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin-right: 10px;
+  /*  margin-left: 70px;*/
+    padding-top: 0;
+    text-align: right;
+    width: 110px;/*178px;*/
+   /* color:#142;*/
+   /*overflow: hidden;*/
+}
+.error2 { color: red; background-color: white; font-size:200%; text-align: center; margin: 0 auto; padding:10px;}
+.big_warn { color: brown; background-color: white; font-size:150%; text-align: center; margin: 0 auto; padding:10px;}
+
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+
+.form_with_labels label.wsz { color:#585;}
+.rt{
+	float: left;
+    margin-left: 188px;/* 188=178+10 - see above */
+}
+
+select, input, textarea, span.na_wejsciu {
+    font-family: arial,helvetica,clean,sans-serif;
+    font-size: 90%;
+    margin-bottom: 4px;
+}
+ span.na_wejsciu { color:#444;}	
+.ui-widget-content { background:none;}
+
+input,textarea,select,option,datalist,.ui-widget-content  {
+	/*background-color:#b0d0c0;*/
+	font-size:0.9em;
+}
+
+.as_input {
+	font-size:0.9em;
+	color:#024;
+}
+.hlp_img{ border:none;}
+
+fieldset {
+    border-radius: 4px;
+    margin: 0 0 0.8em 0;
+    padding: 1em;
+}
+
+fieldset legend { color:#eee; }
+
+.opis {
+    color: #00476B;
+    font-size: 110%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 0 20px 5px 200px;
+}	
+
+#ed_os .opis, #adv_search_form .opis {
+    padding-left: 90px;
+    color:#035;
+}
+#adv_search_form .opis {
+    padding-left:20px;
+    text-align:center;
+}
+
+#sel_person_form input[type="checkbox"], 
+#sel_person_form select 
+{
+	float:left;
+}
+
+#adv_search_form input[type="checkbox"] 
+{
+	float:left;
+	margin-left:30px;
+}
+p.ignore
+{
+	margin: 0 0 0 17px;
+	padding-top: 0;
+}
+#ign_div{
+	float:left;
+	width : 152px;
+}
+.gray{
+	color:gray;
+	}
+#sel_person_form { font-size: 0.9em; }
+	
+	.err { color:red;}
+	.old { color:gray;}
+	.mark { color:green;}
+	.red,span.red { color:red; }
+	.green { color:green; }
+	.disabled { color:#888; }
+	input[type="text"][disabled], .srch_adv[disabled]{ 
+		color: #888;
+		background-color:#bbb;
+		border: 1px solid gray;
+		}
+		
+	.lp { text-align:right; }
+	.pl_en { float:right;font-size:0.8em; margin: 5px 20px 0 0;}
+	.delete, .truncate { color:#611; }
+	.update, .insert { color:#552; }
+	.select { color:#444; }
+	.tyt_nauk{font-size: 90%; color:#375; padding-left:3px;}
+	.tyt_nauk_black{font-size: 90%;color:#313131; padding-left:3px;}
+	.narracja{ color:#232;}
+	.marked, .checked { /*background-color:#bbbb55;*/color:#208040;/*font-weight:bold;*/}
+	tr.odd td.checked, tr.even td.checked { background-color:#80c9a0;}
+	
+	 span.marg_l { margin-left:20px; }
+	.typy_zakl {/*font-size:10.5pt;*/}
+   p.typy_zakl { text-align:left; margin:8px 0px 3px; color: #004422; }
+   p.typy_zak_first {margin-top:3px;}
+    .sel_high { height:110px; }
+    .button { display:inline-block; margin: 10px 20px 5px 20px; }
+    .marg_small{ margin:2px;}
+    .button.add_remove{ margin:0 20px;}
+    input,textarea,select,option,button { border-radius:3px;}
+    /*input[type=submit], input[type=button]
+		{
+			display:inline-block; 
+			margin: 10px 20px 12px 0px;
+            padding: 5px 15px;
+        }*/
+    /*.help_part1{ background-color: #d0f0e0;}*/ 
+    /*.help_part2{ background-color: #E0F0F8;}*/ /* #d0e0f0 */
+    /*.help_part3{ background-color: #d0f0e0;}*/ 
+    .help_part1 h2, .help_part2 h2, .help_part3 h2 { margin: 0; padding-top:12px;}
+    .help_part1 p, .help_part2 p, .help_part3 p { padding:10px; margin: 0;}
+    
+	/*table tr.even td { background-color: #C0D0E0;}*/
+    
+	.typy_zakl label { padding-left:3px; }
+	.typy_zakl1 label{ padding-left:1px; }
+	.typy_zakl label, .typy_zakl1 label{  
+		display: inline-block;
+		font-family: arial,helvetica,clean,sans-serif;
+		font-size: 95%;
+		text-align:left;
+		width: 45px;
+		/*margin-right:0;*/
+		float:none;
+		}
+	.typ_zakl_2 {color:#204080;}
+	.typ_zakl_1 {color:#208040;}
+	.typ_zakl_4 {color:#204080;}
+	.typ_zakl_3 {color:#208040;}
+	.typ_zakl_5 {color:#208080;}
+	.typ_zakl_6 {color:#808080;}
+	.pl { color:green;}
+	.en { color:blue;}
+	.lbl{ text-align:right;}
+	.inlbl{display:inline-block;}
+	.hid    { display: none; }
+	.hidden { visibility:hidden; }
+	.dept { color:blue;}
+	.zakl_lbl { width:80px; }
+	
+	/*p, li { font-family: Tahoma,Arial,sans-serif;
+        font-size: 13px;}*/
+        
+	div.main { 
+		width: 950px;  
+		margin: 0 auto;
+		/*background-color: #a0d0c0;*/
+		}
+
+	#bottom_menu { 
+		width: 900px;  
+		margin: 0 auto;
+		}
+	
+	div#show_zakl{ 
+		width:500px;
+		margin-left: 152px;/*margin: 0 auto; */
+		/*font-size:0.95em;*/
+		padding-left:10px
+		}
+	
+	code { background-color:#f0f0f0;margin: 1px 3px;}
+	
+	/*#csv h2, h3, h4, h2 {
+		text-align:center;
+		color:#055;		}*/
+	
+	h2#spis{
+		text-align:center;
+		padding:0;
+		}
+
+	.clear { clear: both; margin-bottom: 5px; }
+	.clear0 { clear: both; height:5px; }
+	a, .like_anch {
+		/*color: #01C292;*/
+		/*color: #052;*/
+	    color: #124774;/*#4070a0;*//* 598FBE */
+		text-decoration: none;
+		cursor:pointer;
+		/*padding: 0 5px;*/
+	  }
+	/*.wykaz a{ font-size:0.9em;}*/
+  	.org a,.na_wejsciu a{ color:#576;}
+	.polecenia{color:#364; font-size:0.9em;/*padding: 0 5px*/}
+	
+	a:hover, .like_anch:hover, .polecenia:hover {
+		/*color: #073;*/
+		/*background-color:#a0d0c0;*/
+		text-decoration: none;
+		cursor:pointer;
+	}
+	/*#menu1_div a:hover, #menu2_div a:hover, #menu3_div a:hover {	background-color:#a0d0c0; }*/
+	
+	/*a.imag:hover, #ksiazka */table a:hover {
+		background-color:transparent;
+	} 
+
+	a.adv_srch{ 
+		display: inline-block;
+		font-size: 0.9em;
+		margin: 10px 0 0 60px;
+	}
+	a.ord_srch{ 
+		display: inline-block;
+		font-size: 0.9em;
+		margin: 10px 0 0 42px;
+	}
+
+	#back{ margin-left:220px; }
+	
+	#prev_next { margin: 10px 0 0 0; }
+	abbr{ border-bottom:none; }
+	  
+	.org { padding-left:10px; color:#576; font-size: 80%; }
+	.org_no_edit { color:#052; font-size: 80%; }
+
+	#menu1_div, #menu2_div,  #menu3_div {
+		font-size:0.9em;
+		/*width:230px;*/
+		float:left;
+		/*padding:9px 10px 10px 16px;*/
+		padding:0.625em;
+		/*height:348px;*/
+		border-radius: 4px;
+		margin-top:20px;
+		margin-bottom:5px;
+	}
+	#menu1_div { border:2px solid rgb(185,201,217); border-radius: 4px 0 0 4px; }
+	#menu2_div { border-top:2px solid #a8d8c0;border-bottom:2px solid #a8d8c0;
+	border-radius: 0; }
+	#menu3_div{  border:2px solid #a8d8c0; border-radius: 0 4px 4px 0; }
+	.inne_linki {  font-size:1.0em; color:#476;}
+	.wazne_links {  font-size:1.0em; color:#041;/*text-decoration:underline;*/}
+	.wazne_menu1{  font-size:1.1em; color:#073;}/* display:inline-block;padding-top:2px;padding-bottom:5px;}*/
+	.wazne_links:hover { color:#641;}
+	.wazne_menu1:hover{ color:#095;}/* display:inline-block;padding-top:2px;padding-bottom:5px;}*/
+	#menu1_div { margin-left:63px;}
+	#menu1_div label, #menu2_div label, #menu3_div label,  #menu3_div label {
+		width:auto;
+		margin-left:0;
+	}
+	/*table { margin: 0 auto; }*/
+	/*th {background-color: #E0E0C8; color:#052;}*/
+	table tr td, table tr th { text-align:left;padding:3px 10px;/*font-size:13px;border:1px*/}
+	th:first-of-type { border-radius:4px 0 0 0;}
+	th:last-of-type { border-radius:0 4px 0 0;}
+	tr:last-of-type td:first-of-type { border-radius:0 0 0 4px;}
+	tr:last-of-type td:last-of-type { border-radius:0 0 4px 0;}
+	
+	/*table tr.odd td  { background-color: #C0E0D0;}*/ 
+	/*table tr.even td { background-color: #C0D0E0;}*/
+
+	.monkey {
+    border: 0 none;
+    display: inline;
+    margin-bottom: -4px;
+    padding: 0;
+	}
+	
+	.back {
+    margin-bottom: -2px;
+    padding: 0 5px;
+	}
+	
+	.b_home {
+    margin-bottom: -2px;
+    padding: 0 5px;
+	}
+	
+	.b_search {
+    margin-bottom: -3px;
+    padding-left: 4px;
+	}
+	.odst{ margin-bottom:10px;}
+	#links_menu{ margin-top:10px;}
+
+}	
+
+@media print
+{
+	.no-print, .no-print1 { display: none; }
+	.page-break { display: block; page-break-before: always; }
+	div.main	{ width: 700px; }
+	.lp{ padding: 0px 15px 0px 0px;}
+	
+	table tr td, table tr th { color:black; font-family:times,serif; font-size:11px; padding:0 10px 0 0;}
+	a,td,span,.tyt_nauk { color: black; }
+	
+	table { width: auto; } 
+  
+	h1,h2,h3 { font-weight:bold; }
+	h1	{ font-size:18px; border-bottom:none; }
+	h2	{ font-size:15px; }
+	h3	{ font-size:12px; }
+	p	{ font-size:12px; font-family:times new roman, serif; margin:0 0 10px 0; }
+	li	{ font-size:12px; font-family:times new roman, serif; }
+  
+	.typy_zakl1 label {
+		font-size: 85%;
+	}
+}
+html,body { 
+    background-color:#a0c0b0; 
+}
+.szukaj {
+    background-color: #d6f0e1; /*E6F0F0;AADDC8*/
+    border: 1px solid #22AA77;
+    color: green;
+	padding: 2px 10px;
+	border-radius: 3px;
+    }
+.help_part1{ background-color: #b0d0c0;} 
+.help_part2{ background-color: #d0e0F0;}
+.help_part3{ background-color: #b0d0c0;} 
+   
+input,textarea,select,option,datalist,.ui-widget-content  {
+    background-color:#b0d0c0;
+}
+
+#matter a:hover,#matter .like_anch:hover, #matter .polecenia:hover {
+		color: #073;
+		background-color:#a0d0c0;
+}
+
+#sel_person_form label, .form_with_labels label {
+    width: 140px;
+    padding-top: 1px;
+}
+
+.stan_w_zakl {
+	margin:0 5px 5px;
+}
+
+.stan_dla_zakl {
+	margin-top: 12px;
+}
+
+label.width_auto {
+    width: auto;
+    margin-top:3px;
+    margin-right: 0;
+}
+
+table.stan_dla_zakl td{ text-align:center; padding: 3px;}
+table.stan_dla_zakl td:first-of-type{ text-align:left; padding: 5px 15px;}
+
+.stan_dla_zakl td input{ text-align:center;}
+.stan_dla_zakl td label{ width:100%; height:100%; display:inline-block; text-align:center; }
+
+input[type=submit]#subm_sz, input[type=submit]#subm_zap
+		{
+			display:block; 
+			margin: 20px auto 5px;
+        }
+        
+.typy_zakl label, .typy_zakl1 label{  
+	width: 45px;
+}
+
+#searchForm, #adv_search_form {
+    background-color: #a0b8a8;
+    border: 1px solid #80b090;
+ }   
+#adv_search_form {
+ height:314px;
+}   
+#adv_search_form label.wyb {
+    display: inline-block;
+    padding-top:1px;
+}
+#searchForm {
+    height: 86px;
+ }   
+ .zaczyna, .zawiera {
+	margin-top:0;
+}
+
+ .srch {
+    margin: 18px 10px 3px 16px;
+}
+
+#ed_os .opis {
+    padding-left: 220px;
+}
+a, .like_anch {
+		/*color: #01C292;*/
+		/*color: #052;*/
+	color:#052;
+}
+#menu1_div { border:2px solid #a8d8c0;}
+ #menu1_div, #menu2_div, #menu3_div  {line-height:1.3em;background-color:#9aBfB0;/* #a0c8bb;*/}
+
+table tr.odd  td code { background-color: #C0E0D0;} 
+table tr.even td code { background-color: #C0D0E0;}
+</style><div id="ksiazka">
+<h3>IFJ Phone Book</h3>
+<div style="overflow-x:auto;"><table>
+<tr><th class="lp">No</th><th>Person</th><th>Phones</th><th>Departments</th><th>Rooms</th></tr>
+<tr class="odd"><td class="lp">1</td><td>Adamczyk Jolanta</td><td>8266</td><td>NZ52</td><td>3220</td></tr>
+<tr class="even"><td class="lp">2</td><td>Adamczyk Karol<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8053</td><td>NZ11</td><td>0212</td></tr>
+<tr class="odd"><td class="lp">3</td><td>Adamczyk Olga<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8481</td><td>NZ35</td><td>2204</td></tr>
+<tr class="even"><td class="lp">4</td><td>Adamek Krystyna<span class="tyt_nauk_black"> (M.A.)</span></td><td>8404</td><td>DZI</td><td>4501</td></tr>
+<tr class="odd"><td class="lp">5</td><td>Adamek Michał<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8300</td><td>KISD</td><td>2218</td></tr>
+<tr class="even"><td class="lp">6</td><td>Ajersch Paula</td><td>6136</td><td>CCB, ZFM, PBiR</td><td>11119</td></tr>
+<tr class="odd"><td class="lp">7</td><td>Alvarez Castillo David<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8162</td><td>NZ15</td><td>0320</td></tr>
+<tr class="even"><td class="lp">8</td><td>Anees Ahmed Arshiya<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8398</td><td>NZ64</td><td>1220A</td></tr>
+<tr class="odd"><td class="lp">9</td><td>Arbiol Val  Sergio Javier<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8051</td><td>NZ13, KISD</td><td>0210</td></tr>
+<tr class="even"><td class="lp">10</td><td>Babiarz Izabela<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8240</td><td>NZ21</td><td>3314</td></tr>
+<tr class="odd"><td class="lp">11</td><td>Bacher Szymon<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8055</td><td>NZ11, MSD</td><td>5227</td></tr>
+<tr class="even"><td class="lp">12</td><td>Bałamut Marta<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6134, 6135</td><td>ZFM, PDPL</td><td>11120</td></tr>
+<tr class="odd"><td class="lp">13</td><td>Banaś Elżbieta<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8308, 8057</td><td>NZ13</td><td>0221, 0113</td></tr>
+<tr class="even"><td class="lp">14</td><td>Baran Dorota</td><td>8315</td><td>DSP</td><td>4508A</td></tr>
+<tr class="odd"><td class="lp">15</td><td>Baran Przemysław</td><td>8117</td><td>DOG</td><td>5112</td></tr>
+<tr class="even"><td class="lp">16</td><td>Baran Urszula<span class="tyt_nauk_black"> (M.A.)</span></td><td>8186</td><td>DON</td><td>4505</td></tr>
+<tr class="odd"><td class="lp">17</td><td>Barczuk Zuzanna</td><td>8114, 8120</td><td>DAI, DOT</td><td>1B22, 25214</td></tr>
+<tr class="even"><td class="lp">18</td><td>Bartel Ewa</td><td>8354</td><td>DPN</td><td>4602</td></tr>
+<tr class="odd"><td class="lp">19</td><td>Bartyzel Mirosław<span class="tyt_nauk_black"> (Eng.)</span></td><td>8398, 8393</td><td>NZ64</td><td>1220A</td></tr>
+<tr class="even"><td class="lp">20</td><td>Basu Trina</td><td>&nbsp;</td><td>NZ42, KISD</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">21</td><td>Batkiewicz-Kwaśniak Marcela<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8369</td><td>NZ15</td><td>0308</td></tr>
+<tr class="even"><td class="lp">22</td><td>Bator-Odynokow Monika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>515294564, 8317</td><td>DSP</td><td>4508B</td></tr>
+<tr class="odd"><td class="lp">23</td><td>Bażela Rafał</td><td>8460</td><td>DOT</td><td>1B23</td></tr>
+<tr class="even"><td class="lp">24</td><td>Bednarczyk Katarzyna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8109</td><td>DZI</td><td>4101</td></tr>
+<tr class="odd"><td class="lp">25</td><td>Bednarczyk Paweł<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8070</td><td>NLD</td><td>25222</td></tr>
+<tr class="even"><td class="lp">26</td><td>Bednarczyk Piotr<span class="tyt_nauk_black"> (Prof.)</span></td><td>8466</td><td>NZ22</td><td>3313</td></tr>
+<tr class="odd"><td class="lp">27</td><td>Bednarczyk Zuzanna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8409</td><td>NZ52</td><td>3202</td></tr>
+<tr class="even"><td class="lp">28</td><td>Benyaminovich Magdalena<span class="tyt_nauk_black"> (M.A.)</span></td><td>8405, 8238</td><td>DON</td><td>4504</td></tr>
+<tr class="odd"><td class="lp">29</td><td>Bhom Jihyun<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8304</td><td>NZ17</td><td>5318, 0109</td></tr>
+<tr class="even"><td class="lp">30</td><td>Białecki Konrad</td><td>6118</td><td>DCP</td><td>11125</td></tr>
+<tr class="odd"><td class="lp">31</td><td>Bielecki Jakub<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8419</td><td>NZ61</td><td>1201</td></tr>
+<tr class="even"><td class="lp">32</td><td>Biesaga Beata<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>6132</td><td>CCB, ZFM, PBiR</td><td>11111</td></tr>
+<tr class="odd"><td class="lp">33</td><td>Bilski Paweł<span class="tyt_nauk_black"> (Prof.)</span></td><td>8414</td><td>NLW, NZ63</td><td>1222</td></tr>
+<tr class="even"><td class="lp">34</td><td>Błachucki Wojciech<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8169</td><td>NZ53</td><td>1A1-5</td></tr>
+<tr class="odd"><td class="lp">35</td><td>Błasiak Barbara<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8231</td><td>NZ56</td><td>1806</td></tr>
+<tr class="even"><td class="lp">36</td><td>Błasiak Paweł<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8270</td><td>NZ44</td><td>4404</td></tr>
+<tr class="odd"><td class="lp">37</td><td>Błażej Sylwia<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8283, 8288</td><td>NZ64</td><td>6007</td></tr>
+<tr class="even"><td class="lp">38</td><td>Błądek Jarosław<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8336</td><td>NZ61</td><td>1218</td></tr>
+<tr class="odd"><td class="lp">39</td><td>Bocian Dariusz<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8463, 698664402</td><td>TD, DAI, ZNS</td><td>3318</td></tr>
+<tr class="even"><td class="lp">40</td><td>Bogdali Paweł<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8480</td><td>PCA</td><td>1207</td></tr>
+<tr class="odd"><td class="lp">41</td><td>Bohun-Aftyka Kinga</td><td>8319</td><td>DZI</td><td>5212</td></tr>
+<tr class="even"><td class="lp">42</td><td>Borah Dibakar<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8196</td><td>NZ55</td><td>3215</td></tr>
+<tr class="odd"><td class="lp">43</td><td>Borek Małgorzata<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8366</td><td>DPN</td><td>5304A</td></tr>
+<tr class="even"><td class="lp">44</td><td>Borodai Nataliia<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8348</td><td>NZ15</td><td>0306</td></tr>
+<tr class="odd"><td class="lp">45</td><td>Boroń Katarzyna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8366</td><td>DPN</td><td>5304A</td></tr>
+<tr class="even"><td class="lp">46</td><td>Borsuk Józef<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8304</td><td>NZ17</td><td>5318, 0109</td></tr>
+<tr class="odd"><td class="lp">47</td><td>Borys Alicja<span class="tyt_nauk_black"> (M.A.)</span></td><td>8265</td><td>DPN</td><td>5304A</td></tr>
+<tr class="even"><td class="lp">48</td><td>Bożek Andrzej<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8015</td><td>NZ11</td><td>0211</td></tr>
+<tr class="odd"><td class="lp">49</td><td>Brodzicka Jolanta<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8086</td><td>NZ17</td><td>0313</td></tr>
+<tr class="even"><td class="lp">50</td><td>Broniowski Wojciech<span class="tyt_nauk_black"> (Prof.)</span></td><td>8431</td><td>NZ41</td><td>4302</td></tr>
+<tr class="odd"><td class="lp">51</td><td>Brożek Joanna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8144, 8000</td><td>DZI</td><td>5213</td></tr>
+<tr class="even"><td class="lp">52</td><td>Brückman Paweł<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8022</td><td>NZ14</td><td>0208</td></tr>
+<tr class="odd"><td class="lp">53</td><td>Brudecki Kamil<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8152</td><td>NZ65</td><td>1206</td></tr>
+<tr class="even"><td class="lp">54</td><td>Bubak Anna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8250</td><td>NLD</td><td>25306</td></tr>
+<tr class="odd"><td class="lp">55</td><td>Budzanowski Maciej<span class="tyt_nauk_black"> (Prof.)</span></td><td>8061</td><td>NLD</td><td>5303</td></tr>
+<tr class="even"><td class="lp">56</td><td>Byk Katarzyna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8261</td><td>NZ56</td><td>18A-09</td></tr>
+<tr class="odd"><td class="lp">57</td><td>Casanova Sabrina<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8274</td><td>NZ12</td><td>0322</td></tr>
+<tr class="even"><td class="lp">58</td><td>Cerek Katarzyna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8081</td><td>NLD</td><td>1A-1</td></tr>
+<tr class="odd"><td class="lp">59</td><td>Chat Katarzyna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8481</td><td>NZ35</td><td>2204</td></tr>
+<tr class="even"><td class="lp">60</td><td>Chernov Aleksei<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8304</td><td>NZ17</td><td>5318</td></tr>
+<tr class="odd"><td class="lp">61</td><td>Chogondahalli Muniraju Naveen Kumar<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8019</td><td>NZ37</td><td>2219</td></tr>
+<tr class="even"><td class="lp">62</td><td>Chojenka Juliusz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8232</td><td>NZ34</td><td>2203</td></tr>
+<tr class="odd"><td class="lp">63</td><td>Chrabąszcz Karolina<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8203</td><td>NZ52</td><td>3204</td></tr>
+<tr class="even"><td class="lp">64</td><td>Chrostek-Wiktor Agnieszka<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8418</td><td>DZI</td><td>4002</td></tr>
+<tr class="odd"><td class="lp">65</td><td>Chrząszcz Marcin<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8437</td><td>NZ17</td><td>0307</td></tr>
+<tr class="even"><td class="lp">66</td><td>Chwastowski Janusz<span class="tyt_nauk_black"> (Prof.)</span></td><td>8449</td><td>NZ13</td><td>0209</td></tr>
+<tr class="odd"><td class="lp">67</td><td>Ciemała Michał<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8229</td><td>NZ22</td><td>3209</td></tr>
+<tr class="even"><td class="lp">68</td><td>Ciepał Izabela<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8226</td><td>NZ24</td><td>3205</td></tr>
+<tr class="odd"><td class="lp">69</td><td>Cieplicka-Oryńczak Natalia<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8237</td><td>NZ22</td><td>3303</td></tr>
+<tr class="even"><td class="lp">70</td><td>Cieślik Robert</td><td>8356, 8355</td><td>PCA</td><td>1208</td></tr>
+<tr class="odd"><td class="lp">71</td><td>Cieślik Tomasz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8153</td><td>DAI</td><td>25208</td></tr>
+<tr class="even"><td class="lp">72</td><td>Cieżak Klaudia<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8266</td><td>NZ52</td><td>3220</td></tr>
+<tr class="odd"><td class="lp">73</td><td>Curyło Marcin<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8488</td><td>DAI</td><td>25219</td></tr>
+<tr class="even"><td class="lp">74</td><td>Cwanek Anna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8152</td><td>NZ65</td><td>1206</td></tr>
+<tr class="odd"><td class="lp">75</td><td>Czapla-Masztafiak Joanna<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8139</td><td>NZ53</td><td>1A1-7</td></tr>
+<tr class="even"><td class="lp">76</td><td>Czarny Anna</td><td>8321, 500044608</td><td>DOI</td><td>4506</td></tr>
+<tr class="odd"><td class="lp">77</td><td>Czerwiak Weronika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8457</td><td>NLD</td><td>1A-1</td></tr>
+<tr class="even"><td class="lp">78</td><td>Ćwiertnia Katarzyna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>&nbsp;</td><td>DOI, DOT</td><td>3320</td></tr>
+<tr class="odd"><td class="lp">79</td><td>Daher Asaad<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8272</td><td>NZ41, KISD</td><td>4308B</td></tr>
+<tr class="even"><td class="lp">80</td><td>Dankowski Jan<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8419</td><td>NZ61</td><td>1201</td></tr>
+<tr class="odd"><td class="lp">81</td><td>Davis Nikolaos<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8461</td><td>NZ23</td><td>0316</td></tr>
+<tr class="even"><td class="lp">82</td><td>Dąbrowska-Ptak Aleksandra<span class="tyt_nauk_black"> (M.A.)</span></td><td>8417</td><td>DZI</td><td>4501</td></tr>
+<tr class="odd"><td class="lp">83</td><td>Dąbrowski Władysław</td><td>8117</td><td>DOG</td><td>5112</td></tr>
+<tr class="even"><td class="lp">84</td><td>Dedes Irene<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8036</td><td>NZ22</td><td>3212</td></tr>
+<tr class="odd"><td class="lp">85</td><td>Delorme  Stephane <span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8440</td><td>NZ42</td><td>4310</td></tr>
+<tr class="even"><td class="lp">86</td><td>Dembkowska Aleksandra<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8489, 8114</td><td>DAI, ZNS</td><td>25206</td></tr>
+<tr class="odd"><td class="lp">87</td><td>Depciuch-Czarny Joanna<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8160</td><td>NZ32</td><td>2304</td></tr>
+<tr class="even"><td class="lp">88</td><td>Deptuch Aleksandra<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8063</td><td>NZ35</td><td>2310</td></tr>
+<tr class="odd"><td class="lp">89</td><td>Derakhshanian Nasim<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8440</td><td>NZ42, KISD</td><td>4310</td></tr>
+<tr class="even"><td class="lp">90</td><td>Derendarz Dominik<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8023</td><td>NZ14</td><td>0218</td></tr>
+<tr class="odd"><td class="lp">91</td><td>Dey Buddhadeb<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>&nbsp;</td><td>NZ42, KISD</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">92</td><td>Dębski  Grzegorz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8296</td><td>DSK</td><td>5201A</td></tr>
+<tr class="odd"><td class="lp">93</td><td>Dojko Kamil<span class="tyt_nauk_black"> (Eng.)</span></td><td>8336</td><td>NZ61</td><td>1218</td></tr>
+<tr class="even"><td class="lp">94</td><td>Drop Jagoda<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8467, 8486</td><td>NLW</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">95</td><td>Drozdowicz Krzysztof<span class="tyt_nauk_black"> (Prof.)</span></td><td>8336</td><td>NZ61</td><td>1218</td></tr>
+<tr class="even"><td class="lp">96</td><td>Drożdż Stanisław<span class="tyt_nauk_black"> (Prof.)</span></td><td>8220</td><td>NZ44</td><td>4409</td></tr>
+<tr class="odd"><td class="lp">97</td><td>Dryzek Ewa<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8370, 8438</td><td>NZ31</td><td>18A-03</td></tr>
+<tr class="even"><td class="lp">98</td><td>Dryzek Jerzy<span class="tyt_nauk_black"> (Prof.)</span></td><td>8370, 8438</td><td>NZ31</td><td>18A-03</td></tr>
+<tr class="odd"><td class="lp">99</td><td>Drzewicz Anna<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8063</td><td>NZ35</td><td>2310</td></tr>
+<tr class="even"><td class="lp">100</td><td>Duda Dominik<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8243</td><td>KISD</td><td>3213</td></tr>
+<tr class="odd"><td class="lp">101</td><td>Dudek Maria<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8041</td><td>NZ14, KISD</td><td>5226</td></tr>
+<tr class="even"><td class="lp">102</td><td>Dworak Dominik<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8325</td><td>NZ61</td><td>1113</td></tr>
+<tr class="odd"><td class="lp">103</td><td>Dziadoszczyk Justyna</td><td>8102</td><td>DFK</td><td>4604</td></tr>
+<tr class="even"><td class="lp">104</td><td>Dziagiel Wojciech</td><td>8114</td><td>DAI</td><td>hala skraplarki</td></tr>
+<tr class="odd"><td class="lp">105</td><td>Dziechciarz Weronika</td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="even"><td class="lp">106</td><td>Dziedzic Bartosz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8025</td><td>NZ13</td><td>0220</td></tr>
+<tr class="odd"><td class="lp">107</td><td>Dziedzic Jacek</td><td>8117</td><td>DOG</td><td>5112</td></tr>
+<tr class="even"><td class="lp">108</td><td>Dzierwa Weronika</td><td>8100</td><td>DOI</td><td>5305A</td></tr>
+<tr class="odd"><td class="lp">109</td><td>Dziewoński Paweł</td><td>8125, 664305677</td><td>DSK</td><td>5208</td></tr>
+<tr class="even"><td class="lp">110</td><td>Dzieża Barbara<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8214</td><td>NLD</td><td>25224</td></tr>
+<tr class="odd"><td class="lp">111</td><td>Dziurda Agnieszka<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8086</td><td>NZ17</td><td>0313</td></tr>
+<tr class="even"><td class="lp">112</td><td>El Houbbadi Sara<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8300</td><td>NZ36, KISD</td><td>2218</td></tr>
+<tr class="odd"><td class="lp">113</td><td>Ernani Martins Neto Daniel<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8308</td><td>NZ13</td><td>0221</td></tr>
+<tr class="even"><td class="lp">114</td><td>Famulska Laura<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8310</td><td>DPN</td><td>4602</td></tr>
+<tr class="odd"><td class="lp">115</td><td>Fanselow Rafał<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8169</td><td>NZ53</td><td>1A1-5</td></tr>
+<tr class="even"><td class="lp">116</td><td>Feret-Guja Michał</td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="odd"><td class="lp">117</td><td>Figiel Jan<span class="tyt_nauk_black"> (Prof.)</span></td><td>8491</td><td>NZ23</td><td>0317</td></tr>
+<tr class="even"><td class="lp">118</td><td>Fitta Magdalena<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8374</td><td>NZ37</td><td>2307</td></tr>
+<tr class="odd"><td class="lp">119</td><td>Flis Agata<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8031, 8032</td><td>DSK</td><td>4506</td></tr>
+<tr class="even"><td class="lp">120</td><td>Flont Adelajda</td><td>6136</td><td>CCB, ZFM, PBiR</td><td>11119</td></tr>
+<tr class="odd"><td class="lp">121</td><td>Foltyńska Gabriela<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>6148</td><td>ZFM, PDPL</td><td>12108</td></tr>
+<tr class="even"><td class="lp">122</td><td>Fornal Bogdan<span class="tyt_nauk_black"> (Prof.)</span></td><td>8100, 8207</td><td>BD, NZ22</td><td>5305A</td></tr>
+<tr class="odd"><td class="lp">123</td><td>Franczak Renata<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8400</td><td>NZ65, KISD</td><td>1B-11a/b</td></tr>
+<tr class="even"><td class="lp">124</td><td>Frania Monika<span class="tyt_nauk_black"> (M.A.)</span></td><td>8104</td><td>DFK</td><td>4606</td></tr>
+<tr class="odd"><td class="lp">125</td><td>Fryt Wojciech<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8331</td><td>NZ62</td><td>1B-11a/b</td></tr>
+<tr class="even"><td class="lp">126</td><td>Gaamouci Abdelghafar<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8229</td><td>NZ22</td><td>3209</td></tr>
+<tr class="odd"><td class="lp">127</td><td>Gać Edyta</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="even"><td class="lp">128</td><td>Gaj Wawrzyniec<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8059</td><td>DAI</td><td>25210</td></tr>
+<tr class="odd"><td class="lp">129</td><td>Gajewska Katarzyna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8243</td><td>KISD</td><td>3213</td></tr>
+<tr class="even"><td class="lp">130</td><td>Gajewski Jan<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>6136</td><td>CCB, ZFM, PBiR</td><td>11119</td></tr>
+<tr class="odd"><td class="lp">131</td><td>Gałązka Mirosław<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8211</td><td>NZ31</td><td>2212</td></tr>
+<tr class="even"><td class="lp">132</td><td>Garwoliński Jacek</td><td>8355, 8356</td><td>PCA</td><td>1208</td></tr>
+<tr class="odd"><td class="lp">133</td><td>Gaudyn Beata<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>&nbsp;</td><td>NZ21, NZ23, NO2</td><td>3310</td></tr>
+<tr class="even"><td class="lp">134</td><td>Gągola Natalia<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8214</td><td>NLD</td><td>25224</td></tr>
+<tr class="odd"><td class="lp">135</td><td>Gieras Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8428</td><td>NZ12</td><td>0107</td></tr>
+<tr class="even"><td class="lp">136</td><td>Giza Maciej<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8058</td><td>NZ17, KISD</td><td>0112</td></tr>
+<tr class="odd"><td class="lp">137</td><td>Glaz Gabriela<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6200, 500044606</td><td>CCB</td><td>12102</td></tr>
+<tr class="even"><td class="lp">138</td><td>Głąb Joanna<span class="tyt_nauk_black"> (M.A.)</span></td><td>8265</td><td>DPN</td><td>5304A</td></tr>
+<tr class="odd"><td class="lp">139</td><td>Goerlich Lidia<span class="tyt_nauk_black"> (Prof.)</span></td><td>8045</td><td>NZ23</td><td>5319</td></tr>
+<tr class="even"><td class="lp">140</td><td>Gol Jolanta Anna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8176</td><td>NLD</td><td>1A-4</td></tr>
+<tr class="odd"><td class="lp">141</td><td>Golec-Biernat Krzysztof<span class="tyt_nauk_black"> (Prof.)</span></td><td>8441</td><td>NZ41</td><td>4306B</td></tr>
+<tr class="even"><td class="lp">142</td><td>Gołębiewski Adam</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="odd"><td class="lp">143</td><td>Goncerz Mateusz<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8058</td><td>NZ17, KISD</td><td>0112</td></tr>
+<tr class="even"><td class="lp">144</td><td>Góra Dariusz<span class="tyt_nauk_black"> (Prof.)</span></td><td>8406</td><td>NZ15</td><td>0309</td></tr>
+<tr class="odd"><td class="lp">145</td><td>Góralczyk  Danuta</td><td>8103</td><td>DFK</td><td>4606</td></tr>
+<tr class="even"><td class="lp">146</td><td>Górnicki Edward<span class="tyt_nauk_black"> (Eng.)</span></td><td>8430</td><td>NZ14</td><td>0206</td></tr>
+<tr class="odd"><td class="lp">147</td><td>Górska Katarzyna<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8161</td><td>NZ44</td><td>4407a</td></tr>
+<tr class="even"><td class="lp">148</td><td>Grabowski Piotr</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="odd"><td class="lp">149</td><td>Grębosz Jerzy<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8236</td><td>NZ22</td><td>3206</td></tr>
+<tr class="even"><td class="lp">150</td><td>Gruszczak Natalia</td><td>8114</td><td>DAI</td><td>25214</td></tr>
+<tr class="odd"><td class="lp">151</td><td>Gruszczyńska Agnieszka<span class="tyt_nauk_black"> (lic.)</span></td><td>8108</td><td>DON</td><td>4505</td></tr>
+<tr class="even"><td class="lp">152</td><td>Grzanka Leszek<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8412</td><td>NZ62</td><td>1A-3</td></tr>
+<tr class="odd"><td class="lp">153</td><td>Grządziel Dominik<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8330</td><td>NLR</td><td>5209</td></tr>
+<tr class="even"><td class="lp">154</td><td>Grześkowiak Katarzyna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8176</td><td>NLD</td><td>1A-4</td></tr>
+<tr class="odd"><td class="lp">155</td><td>Grzybek Krzysztof</td><td>8008, 8014</td><td>DAI</td><td>hala skraplarki</td></tr>
+<tr class="even"><td class="lp">156</td><td>Grzybek Ryszard</td><td>8008, 8014</td><td>DAI</td><td>hala skraplarki</td></tr>
+<tr class="odd"><td class="lp">157</td><td>Guguła Konrad<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6225, 6110, 664305644</td><td>DCP</td><td>11124</td></tr>
+<tr class="even"><td class="lp">158</td><td>Halczyński Paweł<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8114</td><td>DAI</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">159</td><td>Handzlik Dominika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8415, 691113374</td><td>NO6</td><td>1204</td></tr>
+<tr class="even"><td class="lp">160</td><td>Hankiewicz Michał<span class="tyt_nauk_black"> (Eng.)</span></td><td>6118, 6110</td><td>DCP</td><td>11122</td></tr>
+<tr class="odd"><td class="lp">161</td><td>Harbut Anna</td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="even"><td class="lp">162</td><td>Heczko Michał<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8145</td><td>NZ37</td><td>2201</td></tr>
+<tr class="odd"><td class="lp">163</td><td>Homola Piotr<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8341</td><td>NZ15</td><td>0305</td></tr>
+<tr class="even"><td class="lp">164</td><td>Horeglad Piotr<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8232</td><td>NZ34</td><td>2203</td></tr>
+<tr class="odd"><td class="lp">165</td><td>Horodek Paweł<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8137</td><td>NZ34</td><td>2311</td></tr>
+<tr class="even"><td class="lp">166</td><td>Horwacik Tomasz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>6223</td><td>ZFM, PTO</td><td>12104</td></tr>
+<tr class="odd"><td class="lp">167</td><td>Horzela Andrzej<span class="tyt_nauk_black"> (Prof.)</span></td><td>8383</td><td>NZ44, KISD</td><td>4407b</td></tr>
+<tr class="even"><td class="lp">168</td><td>Hutniczak Agnieszka<span class="tyt_nauk_black"> (M.A.)</span></td><td>8315</td><td>DSP</td><td>4508A</td></tr>
+<tr class="odd"><td class="lp">169</td><td>Imbir Gabriela<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8179</td><td>NZ53</td><td>1A1-9</td></tr>
+<tr class="even"><td class="lp">170</td><td>Isakiewicz Jerzy</td><td>500044602, 8113</td><td>DZI</td><td>4101</td></tr>
+<tr class="odd"><td class="lp">171</td><td>Iskra Łukasz<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8307</td><td>NZ22</td><td>3210</td></tr>
+<tr class="even"><td class="lp">172</td><td>Izdebska Wioletta</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="odd"><td class="lp">173</td><td>Jabłońska Magdalena (Matłaszek)<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6118</td><td>DCP</td><td>11122</td></tr>
+<tr class="even"><td class="lp">174</td><td>Jabłoński Hubert<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6134, 6135</td><td>ZFM, PDPL</td><td>11120</td></tr>
+<tr class="odd"><td class="lp">175</td><td>Janik Aleksandra<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8126, 691110618</td><td>DOT</td><td>1200</td></tr>
+<tr class="even"><td class="lp">176</td><td>Janik Grzegorz<span class="tyt_nauk_black"> (Eng.)</span></td><td>6116, 6110</td><td>DCP</td><td>11123</td></tr>
+<tr class="odd"><td class="lp">177</td><td>Janik Jacek</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="even"><td class="lp">178</td><td>Jardin Axel<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8164</td><td>NZ61</td><td>1212</td></tr>
+<tr class="odd"><td class="lp">179</td><td>Jaros Jakub<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8485</td><td>DAI</td><td>25207</td></tr>
+<tr class="even"><td class="lp">180</td><td>Jasińska Emilia<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8486</td><td>NLW</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">181</td><td>Jasiński Krzysztof<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8225, 8275, 8217</td><td>NZ56</td><td>18A-12</td></tr>
+<tr class="even"><td class="lp">182</td><td>Jasiówka Małgorzata<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8474</td><td>DFK</td><td>4610</td></tr>
+<tr class="odd"><td class="lp">183</td><td>Jeleń Kinga<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8156</td><td>&nbsp;</td><td>1B-11a/b</td></tr>
+<tr class="even"><td class="lp">184</td><td>Jeżabek Marek<span class="tyt_nauk_black"> (Prof.)</span></td><td>8421</td><td>NZ42</td><td>4203</td></tr>
+<tr class="odd"><td class="lp">185</td><td>Jochym Paweł<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8269</td><td>NZ33</td><td>2315</td></tr>
+<tr class="even"><td class="lp">186</td><td>John Jim M.<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>&nbsp;</td><td>NZ42</td><td>4308B</td></tr>
+<tr class="odd"><td class="lp">187</td><td>Jucha Paweł<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8240</td><td>NZ21</td><td>3314</td></tr>
+<tr class="even"><td class="lp">188</td><td>Juszczak Izabela<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8058</td><td>NZ17, KISD</td><td>0313</td></tr>
+<tr class="odd"><td class="lp">189</td><td>Juszyńska-Gałązka Ewa<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8234, 8140, 8368</td><td>NZ35</td><td>2209</td></tr>
+<tr class="even"><td class="lp">190</td><td>Juzek Monika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8041</td><td>NZ14, KISD</td><td>5226</td></tr>
+<tr class="odd"><td class="lp">191</td><td>Kaczmarczyk Piotr</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="even"><td class="lp">192</td><td>Kaczmarska Anna<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8020</td><td>NO1, NZ14</td><td>0215</td></tr>
+<tr class="odd"><td class="lp">193</td><td>Kajdrowicz Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8412</td><td>NZ62</td><td>1A-3</td></tr>
+<tr class="even"><td class="lp">194</td><td>Kaleta Mateusz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8053</td><td>NZ11, KISD</td><td>0212</td></tr>
+<tr class="odd"><td class="lp">195</td><td>Kalita (Majcher) Katarzyna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8258</td><td>NZ56</td><td>18A-33</td></tr>
+<tr class="even"><td class="lp">196</td><td>Kałat Karolina<span class="tyt_nauk_black"> (M.A.)</span></td><td>6200, 500044606</td><td>CCB</td><td>12102</td></tr>
+<tr class="odd"><td class="lp">197</td><td>Kamińska-Januś Agnieszka<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8200, 508346437</td><td>DOI</td><td>5309</td></tr>
+<tr class="even"><td class="lp">198</td><td>Kamiński Michał<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6116, 6110</td><td>DCP</td><td>11123</td></tr>
+<tr class="odd"><td class="lp">199</td><td>Kamiński Robert<span class="tyt_nauk_black"> (Prof.)</span></td><td>8277</td><td>NZ41</td><td>4303</td></tr>
+<tr class="even"><td class="lp">200</td><td>Kania Barbara</td><td>8070</td><td>NLD</td><td>25222</td></tr>
+<tr class="odd"><td class="lp">201</td><td>Kaniecka Małgorzata<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8107</td><td>DFK</td><td>4605</td></tr>
+<tr class="even"><td class="lp">202</td><td>Kantor Ryszard<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8336</td><td>NZ61</td><td>1218</td></tr>
+<tr class="odd"><td class="lp">203</td><td>Kantorski Bogdan</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">204</td><td>Kaprykowski Jakub</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="odd"><td class="lp">205</td><td>Kapustka Katarzyna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8102</td><td>DFK</td><td>4604</td></tr>
+<tr class="even"><td class="lp">206</td><td>Karanth Swathi<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8024</td><td>NZ15</td><td>0219</td></tr>
+<tr class="odd"><td class="lp">207</td><td>Karaś Krzysztof<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8120, 8460, 698664403</td><td>DOT</td><td>1B23</td></tr>
+<tr class="even"><td class="lp">208</td><td>Karczmarska Agnieszka<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8260</td><td>NZ36</td><td>2215</td></tr>
+<tr class="odd"><td class="lp">209</td><td>Karlińska Anna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8104</td><td>DFK</td><td>4606</td></tr>
+<tr class="even"><td class="lp">210</td><td>Kawalec Wojciech<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8453</td><td>NLD</td><td>25203</td></tr>
+<tr class="odd"><td class="lp">211</td><td>Kawecki Andrzej</td><td>8122</td><td>DOT</td><td>Electrical workshop</td></tr>
+<tr class="even"><td class="lp">212</td><td>Kazanecki Michał <span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8304</td><td>NZ17, KISD</td><td>5318</td></tr>
+<tr class="odd"><td class="lp">213</td><td>Kąc Małgorzata<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8260, 8263</td><td>NZ36</td><td>2215</td></tr>
+<tr class="even"><td class="lp">214</td><td>Kędzierska-Pardel Dominika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6148</td><td>ZFM, PDPL, MSD</td><td>12108</td></tr>
+<tr class="odd"><td class="lp">215</td><td>Kędzierski Piotr<span class="tyt_nauk_black"> (Eng.)</span></td><td>8296</td><td>DSK</td><td>5201A</td></tr>
+<tr class="even"><td class="lp">216</td><td>Kiełt Paulina<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8221</td><td>NO4</td><td>4201</td></tr>
+<tr class="odd"><td class="lp">217</td><td>Kierepko Renata<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8397, 8288</td><td>NLP, NZ64</td><td>6007</td></tr>
+<tr class="even"><td class="lp">218</td><td>Kieres Ewelina<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="odd"><td class="lp">219</td><td>Kilian Anna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8091, 8486</td><td>NZ63, NLW</td><td>1221</td></tr>
+<tr class="even"><td class="lp">220</td><td>Kiszkurno Aleksandra<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8457</td><td>NLD</td><td>1A-1</td></tr>
+<tr class="odd"><td class="lp">221</td><td>Klębowski Bartosz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8390</td><td>NZ32</td><td>2305</td></tr>
+<tr class="even"><td class="lp">222</td><td>Kłosowski Mariusz<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8208</td><td>NZ63</td><td>1211</td></tr>
+<tr class="odd"><td class="lp">223</td><td>Kłusek Marta</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="even"><td class="lp">224</td><td>Kłusek-Gawenda Mariola<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8185</td><td>NZ21</td><td>3312</td></tr>
+<tr class="odd"><td class="lp">225</td><td>Kmiecik Maria<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8297</td><td>NZ22</td><td>3315</td></tr>
+<tr class="even"><td class="lp">226</td><td>Knapik Aneta</td><td>8319</td><td>DZI</td><td>5212</td></tr>
+<tr class="odd"><td class="lp">227</td><td>Knera Anica<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8387</td><td>DZP</td><td>5305</td></tr>
+<tr class="even"><td class="lp">228</td><td>Kobylarczyk Jędrzej<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8374</td><td>NZ37</td><td>2307</td></tr>
+<tr class="odd"><td class="lp">229</td><td>Koczot Andrzej<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6116, 6110</td><td>DCP</td><td>11123</td></tr>
+<tr class="even"><td class="lp">230</td><td>Kołtonik Katarzyna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8152</td><td>NZ65</td><td>1206</td></tr>
+<tr class="odd"><td class="lp">231</td><td>Komárek Tomáš<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8025</td><td>NZ13</td><td>0220</td></tr>
+<tr class="even"><td class="lp">232</td><td>Komenda Wiktor<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6134, 6135</td><td>ZFM, PDPL</td><td>11120</td></tr>
+<tr class="odd"><td class="lp">233</td><td>Konderak-Strojecka Paulina</td><td>8387</td><td>DZP</td><td>5305</td></tr>
+<tr class="even"><td class="lp">234</td><td>Konieczka Monika<span class="tyt_nauk_black"> (M.A.)</span></td><td>8310</td><td>DPN</td><td>4602</td></tr>
+<tr class="odd"><td class="lp">235</td><td>Konieczny Piotr<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8019</td><td>NZ37</td><td>2219</td></tr>
+<tr class="even"><td class="lp">236</td><td>Kopański Konrad</td><td>8027, 8334</td><td>NZ15</td><td>0102, 0304</td></tr>
+<tr class="odd"><td class="lp">237</td><td>Kopeć Marek<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8082, 8476</td><td>NZ52</td><td>3216</td></tr>
+<tr class="even"><td class="lp">238</td><td>Kopeć Renata<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>6200</td><td>CCB</td><td>12103</td></tr>
+<tr class="odd"><td class="lp">239</td><td>Korchyn Oleksandr<span class="tyt_nauk_black"> (Prof.)</span></td><td>8064</td><td>NZ21</td><td>4306A</td></tr>
+<tr class="even"><td class="lp">240</td><td>Korcyl Krzysztof<span class="tyt_nauk_black"> (Prof.)</span></td><td>8025</td><td>NZ13</td><td>0220</td></tr>
+<tr class="odd"><td class="lp">241</td><td>Korcyl Marta<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>6138</td><td>ZFM, PTO</td><td>11118</td></tr>
+<tr class="even"><td class="lp">242</td><td>Kordaszewska Urszula<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8102</td><td>DFK</td><td>4604</td></tr>
+<tr class="odd"><td class="lp">243</td><td>Kos Robert<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6124</td><td>DCP</td><td>11121</td></tr>
+<tr class="even"><td class="lp">244</td><td>Kosałka Anita</td><td>8424</td><td>DPN</td><td>4601</td></tr>
+<tr class="odd"><td class="lp">245</td><td>Kowalczyk Katarzyna<span class="tyt_nauk_black"> (lic.)</span></td><td>8214</td><td>NLD</td><td>25223</td></tr>
+<tr class="even"><td class="lp">246</td><td>Kowalewska Kamila<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8451</td><td>DON</td><td>4503</td></tr>
+<tr class="odd"><td class="lp">247</td><td>Kowalik Joanna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8452</td><td>DPN</td><td>4201 (1st floor)</td></tr>
+<tr class="even"><td class="lp">248</td><td>Kowalski Marek<span class="tyt_nauk_black"> (Prof.)</span></td><td>8074</td><td>NZ23</td><td>0311</td></tr>
+<tr class="odd"><td class="lp">249</td><td>Kowalski Władysław</td><td>8373</td><td>NZ34</td><td>1108</td></tr>
+<tr class="even"><td class="lp">250</td><td>Kownacka Bożena</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="odd"><td class="lp">251</td><td>Kozak Jarosław</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">252</td><td>Kozak Krzysztof<span class="tyt_nauk_black"> (Prof.)</span></td><td>8332</td><td>NLR</td><td>3201</td></tr>
+<tr class="odd"><td class="lp">253</td><td>Kozela Adam<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8290, 6120</td><td>NZ24</td><td>3302</td></tr>
+<tr class="even"><td class="lp">254</td><td>Kozień Jolanta</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="odd"><td class="lp">255</td><td>Kozień Małgorzata</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="even"><td class="lp">256</td><td>Kozień Wiesław</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">257</td><td>Kozłowski Dariusz</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">258</td><td>Krasowska Oliwia<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8053</td><td>NZ11, KISD</td><td>0212</td></tr>
+<tr class="odd"><td class="lp">259</td><td>Krempa Artur<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6226</td><td>DCP</td><td>11121</td></tr>
+<tr class="even"><td class="lp">260</td><td>Krishna Nikhil<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8492</td><td>NZ21</td><td>3305</td></tr>
+<tr class="odd"><td class="lp">261</td><td>Krochmal Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8498</td><td>DAI</td><td>25212</td></tr>
+<tr class="even"><td class="lp">262</td><td>Król Krzysztof<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8419</td><td>NZ61</td><td>1201</td></tr>
+<tr class="odd"><td class="lp">263</td><td>Król Magdalena<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8306</td><td>DPN</td><td>4601</td></tr>
+<tr class="even"><td class="lp">264</td><td>Królas Wojciech<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8128</td><td>NZ61, NO6</td><td>1204</td></tr>
+<tr class="odd"><td class="lp">265</td><td>Kruk Małgorzata</td><td>8076</td><td>NLD</td><td>1A-3</td></tr>
+<tr class="even"><td class="lp">266</td><td>Krupiński Michał<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8244</td><td>NZ34</td><td>2214</td></tr>
+<tr class="odd"><td class="lp">267</td><td>Krupnik Kinga<span class="tyt_nauk_black"> (M.A.)</span></td><td>8177, 691115715</td><td>DOI</td><td>5309</td></tr>
+<tr class="even"><td class="lp">268</td><td>Krysa Piotr</td><td>8114</td><td>DAI</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">269</td><td>Krzempek Dawid<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6220</td><td>ZFM, PDPL</td><td>12105</td></tr>
+<tr class="even"><td class="lp">270</td><td>Krzempek Katarzyna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6148</td><td>ZFM, PBiR</td><td>12108</td></tr>
+<tr class="odd"><td class="lp">271</td><td>Krztoń Alicja</td><td>8018</td><td>DOG</td><td>1103</td></tr>
+<tr class="even"><td class="lp">272</td><td>Krztoń Kazimierz</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">273</td><td>Krzysiek Mateusz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8410, 515294562</td><td>DOR</td><td>5204</td></tr>
+<tr class="even"><td class="lp">274</td><td>Krzystanek Kamila<span class="tyt_nauk_black"> (M.A.)</span></td><td>8088</td><td>NO5, NZ52, NZ53, NZ55, NZ56</td><td>3307</td></tr>
+<tr class="odd"><td class="lp">275</td><td>Krzysztof Leszek</td><td>8122</td><td>DOT</td><td>Electrical workshop</td></tr>
+<tr class="even"><td class="lp">276</td><td>Krzywdziński Dariusz</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">277</td><td>Krzyżowska Monika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6132</td><td>CCB, ZFM, PBiR</td><td>11111</td></tr>
+<tr class="even"><td class="lp">278</td><td>Kubaj Sebastian</td><td>8450</td><td>DAI</td><td>25230</td></tr>
+<tr class="odd"><td class="lp">279</td><td>Kucharczyk Marcin<span class="tyt_nauk_black"> (Prof.)</span></td><td>8050</td><td>NZ17</td><td>0315</td></tr>
+<tr class="even"><td class="lp">280</td><td>Kucia Magdalena</td><td>&nbsp;</td><td>DOG</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">281</td><td>Kulesa Klaudia<span class="tyt_nauk_black"> (M.A.)</span></td><td>8103</td><td>DFK</td><td>4606</td></tr>
+<tr class="even"><td class="lp">282</td><td>Kulessa Paweł<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8435</td><td>NZ22</td><td>3211</td></tr>
+<tr class="odd"><td class="lp">283</td><td>Kulińska Agnieszka<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8335</td><td>NZ61</td><td>1213</td></tr>
+<tr class="even"><td class="lp">284</td><td>Kumar Devender<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8430</td><td>NZ11</td><td>0206</td></tr>
+<tr class="odd"><td class="lp">285</td><td>Kupiec Krzysztof</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">286</td><td>Kuras Mateusz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8073</td><td>NLD</td><td>25204</td></tr>
+<tr class="odd"><td class="lp">287</td><td>Kurowski Arkadiusz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8164</td><td>NZ61</td><td>1212</td></tr>
+<tr class="even"><td class="lp">288</td><td>Kusina Aleksander<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8360</td><td>NZ42</td><td>4205</td></tr>
+<tr class="odd"><td class="lp">289</td><td>Kusyk Sebastian<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8052</td><td>NZ62, KISD</td><td>1A-2</td></tr>
+<tr class="even"><td class="lp">290</td><td>Kutak Krzysztof<span class="tyt_nauk_black"> (Prof.)</span></td><td>8312</td><td>NZ42</td><td>4207</td></tr>
+<tr class="odd"><td class="lp">291</td><td>Kuźma Dominika <span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8495, 8439</td><td>NZ33</td><td>2313</td></tr>
+<tr class="even"><td class="lp">292</td><td>Kuźnik Dorota<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8490</td><td>NZ63, KISD</td><td>1214</td></tr>
+<tr class="odd"><td class="lp">293</td><td>Kwapień Jarosław<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8146</td><td>NZ44</td><td>4403</td></tr>
+<tr class="even"><td class="lp">294</td><td>Kwiatek Wojciech<span class="tyt_nauk_black"> (Prof.)</span></td><td>8235, 691111600</td><td>NO5, NZ52, NZ53</td><td>3306</td></tr>
+<tr class="odd"><td class="lp">295</td><td>Kwiatkowska Katarzyna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8114</td><td>DAI</td><td>25214</td></tr>
+<tr class="even"><td class="lp">296</td><td>Laskowska Magdalena<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8342, 8065</td><td>NZ64</td><td>18A-26, 18A-27</td></tr>
+<tr class="odd"><td class="lp">297</td><td>Laskowski Łukasz<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8263, 8402</td><td>NZ36</td><td>2301, 18A-25</td></tr>
+<tr class="even"><td class="lp">298</td><td>Lebiedowicz Piotr<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8492</td><td>NZ21</td><td>3305</td></tr>
+<tr class="odd"><td class="lp">299</td><td>Lekka Małgorzata<span class="tyt_nauk_black"> (Prof.)</span></td><td>8271</td><td>NZ55</td><td>3218</td></tr>
+<tr class="even"><td class="lp">300</td><td>Lenda Andrzej</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="odd"><td class="lp">301</td><td>Lesiak Tadeusz<span class="tyt_nauk_black"> (Prof.)</span></td><td>8200</td><td>ND, NZ17</td><td>5309</td></tr>
+<tr class="even"><td class="lp">302</td><td>Leszczyńska Julia<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8054</td><td>NZ14</td><td>0213</td></tr>
+<tr class="odd"><td class="lp">303</td><td>Leśniak Leonard<span class="tyt_nauk_black"> (Prof.)</span></td><td>8278</td><td>&nbsp;</td><td>4307</td></tr>
+<tr class="even"><td class="lp">304</td><td>Lewandowska Monika<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8489, 8114</td><td>DAI, ZNS</td><td>25206</td></tr>
+<tr class="odd"><td class="lp">305</td><td>Lewicki Maciej<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8361</td><td>NZ13</td><td>0204</td></tr>
+<tr class="even"><td class="lp">306</td><td>Lipa Monika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6146</td><td>ZFM, PDPL</td><td>12107</td></tr>
+<tr class="odd"><td class="lp">307</td><td>Lipka Andrzej<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8450, 8455</td><td>DAI</td><td>25230</td></tr>
+<tr class="even"><td class="lp">308</td><td>Lisowska Agnieszka<span class="tyt_nauk_black"> (M.A.)</span></td><td>8104</td><td>DFK</td><td>4606</td></tr>
+<tr class="odd"><td class="lp">309</td><td>Listwan Przemysław<span class="tyt_nauk_black"> (Eng.)</span></td><td>8073</td><td>NLD</td><td>25204</td></tr>
+<tr class="even"><td class="lp">310</td><td>Liszka Beniamin<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8498, 8114</td><td>DAI</td><td>25212</td></tr>
+<tr class="odd"><td class="lp">311</td><td>Lökös Sándor<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8491</td><td>NZ23</td><td>0317</td></tr>
+<tr class="even"><td class="lp">312</td><td>Ludwin Jaromir<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8068, 8114</td><td>DAI</td><td>25213</td></tr>
+<tr class="odd"><td class="lp">313</td><td>Lukas Jakub<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8330</td><td>NLR</td><td>5209</td></tr>
+<tr class="even"><td class="lp">314</td><td>Łach Anna<span class="tyt_nauk_black"> (M.A.)</span></td><td>8405</td><td>DON</td><td>4504</td></tr>
+<tr class="odd"><td class="lp">315</td><td>Łagan Justyna</td><td>8344</td><td>DOI, RND</td><td>5224</td></tr>
+<tr class="even"><td class="lp">316</td><td>Ławik Monika<span class="tyt_nauk_black"> (M.A.)</span></td><td>8010, 8011</td><td>NO1</td><td>0323</td></tr>
+<tr class="odd"><td class="lp">317</td><td>Łażewski Jan<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8281</td><td>NZ33</td><td>2312</td></tr>
+<tr class="even"><td class="lp">318</td><td>Łodziana Zbigniew<span class="tyt_nauk_black"> (Prof.)</span></td><td>8267</td><td>NZ31</td><td>2206</td></tr>
+<tr class="odd"><td class="lp">319</td><td>Łohin Anna</td><td>8479</td><td>DFK</td><td>4608</td></tr>
+<tr class="even"><td class="lp">320</td><td>Łokas Edyta<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8363</td><td>NZ65</td><td>1A1-6</td></tr>
+<tr class="odd"><td class="lp">321</td><td>Łukasik Jerzy<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8422</td><td>NZ24</td><td>3304</td></tr>
+<tr class="even"><td class="lp">322</td><td>Łyko Beata</td><td>8116</td><td>DOG</td><td>5117</td></tr>
+<tr class="odd"><td class="lp">323</td><td>Maciocha Waldemar<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8432, 8114</td><td>DAI</td><td>25216</td></tr>
+<tr class="even"><td class="lp">324</td><td>Maciuła Rafał<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8240</td><td>NZ21</td><td>3314</td></tr>
+<tr class="odd"><td class="lp">325</td><td>Maćków Roman</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="even"><td class="lp">326</td><td>Mahraj Issam<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8281</td><td>NZ33, KISD</td><td>2312</td></tr>
+<tr class="odd"><td class="lp">327</td><td>Maj Adam<span class="tyt_nauk_black"> (Prof.)</span></td><td>+48606291860, 8141</td><td>NO2, NZ22</td><td>3311</td></tr>
+<tr class="even"><td class="lp">328</td><td>Majczak-Ziarno Paulina<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8214</td><td>NLD</td><td>25223</td></tr>
+<tr class="odd"><td class="lp">329</td><td>Malczewski Jakub<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8024</td><td>NZ17, KISD</td><td>0219</td></tr>
+<tr class="even"><td class="lp">330</td><td>Malecki Paweł<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8023</td><td>NZ14</td><td>0218</td></tr>
+<tr class="odd"><td class="lp">331</td><td>Malecki Piotr<span class="tyt_nauk_black"> (Prof.)</span></td><td>8429</td><td>&nbsp;</td><td>0222</td></tr>
+<tr class="even"><td class="lp">332</td><td>Malinowski Leszek<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6138</td><td>ZFM, PTO</td><td>11118</td></tr>
+<tr class="odd"><td class="lp">333</td><td>Marcinek Alicja</td><td>&nbsp;</td><td>DOG</td><td>11026</td></tr>
+<tr class="even"><td class="lp">334</td><td>Marcinek Antoni<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8045</td><td>NZ23</td><td>5319</td></tr>
+<tr class="odd"><td class="lp">335</td><td>Marciniak Karol</td><td>8498</td><td>DAI</td><td>25212</td></tr>
+<tr class="even"><td class="lp">336</td><td>Marciniak Łukasz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8325</td><td>NZ61</td><td>1113</td></tr>
+<tr class="odd"><td class="lp">337</td><td>Marcinkowska Małgorzata</td><td>&nbsp;</td><td>DOG</td><td>11026</td></tr>
+<tr class="even"><td class="lp">338</td><td>Marek Wojciech<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8446</td><td>DAI</td><td>25219</td></tr>
+<tr class="odd"><td class="lp">339</td><td>Markowicz Maciej<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8434, 502138719</td><td>DPR</td><td>5303</td></tr>
+<tr class="even"><td class="lp">340</td><td>Markulis Konrad</td><td>8114</td><td>DAI</td><td>25230</td></tr>
+<tr class="odd"><td class="lp">341</td><td>Matejska-Minda Magdalena<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8036</td><td>NZ22</td><td>3212</td></tr>
+<tr class="even"><td class="lp">342</td><td>Matyja Adam<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8072</td><td>NZ23</td><td>0314</td></tr>
+<tr class="odd"><td class="lp">343</td><td>Mazur Jadwiga<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8332</td><td>NLR</td><td>3201</td></tr>
+<tr class="even"><td class="lp">344</td><td>Mazurek Katarzyna<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8237</td><td>NZ21</td><td>3303</td></tr>
+<tr class="odd"><td class="lp">345</td><td>Mehrara Rojin<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8336</td><td>NZ61</td><td>1218</td></tr>
+<tr class="even"><td class="lp">346</td><td>Metwally Sara<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8062</td><td>NZ55</td><td>3214</td></tr>
+<tr class="odd"><td class="lp">347</td><td>Michalec Barbara<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>6224</td><td>SKJ</td><td>12104</td></tr>
+<tr class="even"><td class="lp">348</td><td>Michalska Magdalena<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8176</td><td>NLD</td><td>1A-4</td></tr>
+<tr class="odd"><td class="lp">349</td><td>Michałowski Jerzy<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8428</td><td>NZ12</td><td>0107</td></tr>
+<tr class="even"><td class="lp">350</td><td>Mielnik Mateusz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6133</td><td>CCB, ZFM, STE</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">351</td><td>Mietelski Jerzy W.<span class="tyt_nauk_black"> (Prof.)</span></td><td>8392, 8397, 8288</td><td>NLP, NZ64</td><td>6008</td></tr>
+<tr class="even"><td class="lp">352</td><td>Mikocki Stanisław<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8334</td><td>&nbsp;</td><td>0304</td></tr>
+<tr class="odd"><td class="lp">353</td><td>Mikołajski Tomasz</td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="even"><td class="lp">354</td><td>Milcewicz-Mika Izabela<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8077</td><td>NLD</td><td>1A-2</td></tr>
+<tr class="odd"><td class="lp">355</td><td>Miszczyk Justyna<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>6222</td><td>CCB, ZFM, PBiR</td><td>11116</td></tr>
+<tr class="even"><td class="lp">356</td><td>Miśkiewicz Grzegorz<span class="tyt_nauk_black"> (M.A.)</span></td><td>8434, 502772892</td><td>DPR</td><td>5303</td></tr>
+<tr class="odd"><td class="lp">357</td><td>Mitura-Nowak Marzena<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8262</td><td>NZ34</td><td>2306</td></tr>
+<tr class="even"><td class="lp">358</td><td>Mogarkar Megha<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8042</td><td>NZ15, KISD</td><td>0214</td></tr>
+<tr class="odd"><td class="lp">359</td><td>Mojżeszek (Adamek) Natalia<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>6134, 6135</td><td>ZFM, PDPL</td><td>11120</td></tr>
+<tr class="even"><td class="lp">360</td><td>Molęda Janusz</td><td>8352</td><td>PCA</td><td>1110</td></tr>
+<tr class="odd"><td class="lp">361</td><td>Morawski Dariusz<span class="tyt_nauk_black"> (Eng.)</span></td><td>8335</td><td>NZ61</td><td>1213</td></tr>
+<tr class="even"><td class="lp">362</td><td>Mosurek Jolanta<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8301</td><td>DOI, RND</td><td>5225</td></tr>
+<tr class="odd"><td class="lp">363</td><td>Moździerz Paulina<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="even"><td class="lp">364</td><td>Mroczek Mariusz</td><td>8330</td><td>NLR</td><td>5209</td></tr>
+<tr class="odd"><td class="lp">365</td><td>Mrozik Anna<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8490</td><td>NZ63</td><td>1214</td></tr>
+<tr class="even"><td class="lp">366</td><td>Mróz Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8054</td><td>NZ13, KISD</td><td>0213</td></tr>
+<tr class="odd"><td class="lp">367</td><td>Mróz Tomasz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8398</td><td>NZ64</td><td>1220A</td></tr>
+<tr class="even"><td class="lp">368</td><td>Murzyn Beata<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8010, 8011</td><td>NO1</td><td>0323</td></tr>
+<tr class="odd"><td class="lp">369</td><td>Mysłowska Renata<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8016</td><td>DFK, SRP</td><td>4606</td></tr>
+<tr class="even"><td class="lp">370</td><td>Najman Joanna<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8398, 8393</td><td>NZ64</td><td>1220A</td></tr>
+<tr class="odd"><td class="lp">371</td><td>Nalewajski Krzysztof<span class="tyt_nauk_black"> (Eng.)</span></td><td>8428</td><td>NZ12</td><td>0107</td></tr>
+<tr class="even"><td class="lp">372</td><td>Natkaniec Zbigniew<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>500044601, 8044, 8043</td><td>DSK</td><td>0202, 0112</td></tr>
+<tr class="odd"><td class="lp">373</td><td>Niejadlik Joanna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8121</td><td>BHP, DOZ</td><td>5210</td></tr>
+<tr class="even"><td class="lp">374</td><td>Niemiec Jacek<span class="tyt_nauk_black"> (Prof.)</span></td><td>8035</td><td>NZ12</td><td>0321</td></tr>
+<tr class="odd"><td class="lp">375</td><td>Niemiec Robert<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8418</td><td>DZI</td><td>4002</td></tr>
+<tr class="even"><td class="lp">376</td><td>Noga Wojciech<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8027, 8334</td><td>NZ15, KISD</td><td>0102, 0304</td></tr>
+<tr class="odd"><td class="lp">377</td><td>Nowak Grażyna<span class="tyt_nauk_black"> (Prof.)</span></td><td>8055</td><td>&nbsp;</td><td>5227</td></tr>
+<tr class="even"><td class="lp">378</td><td>Nowak Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8413, 6138</td><td>ZFM, PTO</td><td>11118</td></tr>
+<tr class="odd"><td class="lp">379</td><td>Nowak Wiesław</td><td>8122</td><td>DOT</td><td>Electrical workshop</td></tr>
+<tr class="even"><td class="lp">380</td><td>Nowak-Sikora Natalia<span class="tyt_nauk_black"> (M.A.)</span></td><td>8328</td><td>DON</td><td>Library</td></tr>
+<tr class="odd"><td class="lp">381</td><td>Nykiel Anna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8300</td><td>NZ36</td><td>2218</td></tr>
+<tr class="even"><td class="lp">382</td><td>Ochenkowska Ewa</td><td>8311</td><td>DPN</td><td>4601</td></tr>
+<tr class="odd"><td class="lp">383</td><td>Olko Paweł<span class="tyt_nauk_black"> (Prof.)</span></td><td>8248</td><td>NZ62</td><td>1202</td></tr>
+<tr class="even"><td class="lp">384</td><td>Ortwein Rafał<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8483</td><td>DAI, ZNS</td><td>25211</td></tr>
+<tr class="odd"><td class="lp">385</td><td>Orzeł Agnieszka<span class="tyt_nauk_black"> (M.A.)</span></td><td>8457</td><td>NLD</td><td>1A-1</td></tr>
+<tr class="even"><td class="lp">386</td><td>Osak Dariusz</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">387</td><td>Oshchapovskyy Ihor<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8300</td><td>NZ34</td><td>2218</td></tr>
+<tr class="even"><td class="lp">388</td><td>Osiecka-Drewniak Natalia<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8282</td><td>NZ35</td><td>2208</td></tr>
+<tr class="odd"><td class="lp">389</td><td>Oświęcimka Paweł<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8146</td><td>NZ44</td><td>4403</td></tr>
+<tr class="even"><td class="lp">390</td><td>Otwinowski Jacek<span class="tyt_nauk_black"> (Prof.)</span></td><td>8071</td><td>NZ23</td><td>0318</td></tr>
+<tr class="odd"><td class="lp">391</td><td>Ozturk Ferhat<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8051</td><td>NZ13, KISD</td><td>0210</td></tr>
+<tr class="even"><td class="lp">392</td><td>Ozvenchuk Vitalii<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8461</td><td>NZ23</td><td>0316</td></tr>
+<tr class="odd"><td class="lp">393</td><td>Pabijan Joanna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8286</td><td>NZ55</td><td>3219</td></tr>
+<tr class="even"><td class="lp">394</td><td>Pacanowska Aleksandra<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8145</td><td>NZ37, KISD</td><td>2201</td></tr>
+<tr class="odd"><td class="lp">395</td><td>Paduch Antonina</td><td>8105</td><td>DFK</td><td>4608</td></tr>
+<tr class="even"><td class="lp">396</td><td>Pająk Piotr<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6124</td><td>DCP</td><td>11121</td></tr>
+<tr class="odd"><td class="lp">397</td><td>Pajdak Julita</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="even"><td class="lp">398</td><td>Paluszkiewicz Czesława<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8095</td><td>NZ52</td><td>3308</td></tr>
+<tr class="odd"><td class="lp">399</td><td>Pałczyński Jakub<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="even"><td class="lp">400</td><td>Panek Agnieszka<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8082</td><td>DOZ, NZ52</td><td>3216</td></tr>
+<tr class="odd"><td class="lp">401</td><td>Parafiniuk Joanna<span class="tyt_nauk_black"> (M.A.)</span></td><td>8250</td><td>NLD</td><td>25306</td></tr>
+<tr class="even"><td class="lp">402</td><td>Parlińska-Wojtan Magdalena<span class="tyt_nauk_black"> (Prof.)</span></td><td>8160</td><td>NZ32</td><td>2304</td></tr>
+<tr class="odd"><td class="lp">403</td><td>Parol Wiktor<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8213</td><td>NZ24</td><td>3301</td></tr>
+<tr class="even"><td class="lp">404</td><td>Partyła Dariusz</td><td>8008, 8014</td><td>DAI</td><td>hala skraplarki</td></tr>
+<tr class="odd"><td class="lp">405</td><td>Pasiecznik Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6110</td><td>DCP</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">406</td><td>Pasieka Agnieszka<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8410, 696787125</td><td>DOR</td><td>5204</td></tr>
+<tr class="odd"><td class="lp">407</td><td>Pastukh Oleksandr<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8439</td><td>NZ36</td><td>2313</td></tr>
+<tr class="even"><td class="lp">408</td><td>Pastukh Svitlana<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8408</td><td>NZ33</td><td>2302</td></tr>
+<tr class="odd"><td class="lp">409</td><td>Pastuszka Katarzyna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6136</td><td>KISD</td><td>11119</td></tr>
+<tr class="even"><td class="lp">410</td><td>Patel Pragati<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8051</td><td>NZ13, KISD</td><td>0210</td></tr>
+<tr class="odd"><td class="lp">411</td><td>Patoła Agnieszka </td><td>&nbsp;</td><td>DOG</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">412</td><td>Pawłowski Piotr<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8422</td><td>NZ24</td><td>3304</td></tr>
+<tr class="odd"><td class="lp">413</td><td>Pazniak Natallia</td><td>8106</td><td>DFK</td><td>4603</td></tr>
+<tr class="even"><td class="lp">414</td><td>Pelc Kacper<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8017</td><td>DAI</td><td>25218</td></tr>
+<tr class="odd"><td class="lp">415</td><td>Pełka Robert<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8019</td><td>NZ37</td><td>2219</td></tr>
+<tr class="even"><td class="lp">416</td><td>Perek Dominika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8115, 506112252</td><td>DOG</td><td>4101</td></tr>
+<tr class="odd"><td class="lp">417</td><td>Pernach Grzegorz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8293</td><td>DSK</td><td>5202A</td></tr>
+<tr class="even"><td class="lp">418</td><td>Perzanowski Marcin<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8232</td><td>NZ34</td><td>2203</td></tr>
+<tr class="odd"><td class="lp">419</td><td>Pękala Jan<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8341</td><td>NZ15</td><td>0305</td></tr>
+<tr class="even"><td class="lp">420</td><td>Piekaj Mirosław</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">421</td><td>Piekarz Przemysław<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8209</td><td>NZ33</td><td>2314</td></tr>
+<tr class="even"><td class="lp">422</td><td>Pieprzyca Tomasz</td><td>8372, 8147</td><td>NZ53</td><td>1A-4</td></tr>
+<tr class="odd"><td class="lp">423</td><td>Piergies Natalia<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8322</td><td>NZ52</td><td>3203</td></tr>
+<tr class="even"><td class="lp">424</td><td>Pietrzak Tobiasz<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8284</td><td>NZ44, KISD</td><td>4408</td></tr>
+<tr class="odd"><td class="lp">425</td><td>Pietrzyk Leszek</td><td>8117</td><td>DOG</td><td>5112</td></tr>
+<tr class="even"><td class="lp">426</td><td>Pięta Ewa<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8203</td><td>NZ52</td><td>3204</td></tr>
+<tr class="odd"><td class="lp">427</td><td>Pigulski Zbigniew</td><td>8122</td><td>DOT</td><td>Electrical workshop</td></tr>
+<tr class="even"><td class="lp">428</td><td>Piwowarczyk Marcin<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8481</td><td>NZ35</td><td>2204</td></tr>
+<tr class="odd"><td class="lp">429</td><td>Placha Magdalena Krystyna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8214</td><td>NLD</td><td>25223</td></tr>
+<tr class="even"><td class="lp">430</td><td>Płatek Piotr<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8331</td><td>NZ62</td><td>1B-11a/b</td></tr>
+<tr class="odd"><td class="lp">431</td><td>Pogoda Katarzyna<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8127</td><td>NZ52</td><td>3217</td></tr>
+<tr class="even"><td class="lp">432</td><td>Pogwizd Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8129, 668639189</td><td>DOT</td><td>3320</td></tr>
+<tr class="odd"><td class="lp">433</td><td>Polit Oliwia<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8145</td><td>NZ34, KISD</td><td>2201</td></tr>
+<tr class="even"><td class="lp">434</td><td>Poncelet Rene<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>&nbsp;</td><td>NZ42</td><td>4304</td></tr>
+<tr class="odd"><td class="lp">435</td><td>Popek Dorota<span class="tyt_nauk_black"> (M.A.)</span></td><td>8107</td><td>DFK</td><td>4605</td></tr>
+<tr class="even"><td class="lp">436</td><td>Popek Małgorzata<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8219</td><td>DZI</td><td>4202</td></tr>
+<tr class="odd"><td class="lp">437</td><td>Poradecka Dorota<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="even"><td class="lp">438</td><td>Priyadarshi Chaitanya<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8348</td><td>NZ15</td><td>0306</td></tr>
+<tr class="odd"><td class="lp">439</td><td>Przebieracz Olimpia<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8387</td><td>DZP</td><td>5305</td></tr>
+<tr class="even"><td class="lp">440</td><td>Przybyszewski Paweł</td><td>&nbsp;</td><td>DOG</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">441</td><td>Ptok Andrzej<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8281</td><td>NZ33</td><td>2312</td></tr>
+<tr class="even"><td class="lp">442</td><td>Putek Piotr</td><td>8450, 8455</td><td>DAI</td><td>25230</td></tr>
+<tr class="odd"><td class="lp">443</td><td>Pysz Krzysztof<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8436</td><td>NZ24</td><td>3208</td></tr>
+<tr class="even"><td class="lp">444</td><td>Pyszka Ewelina<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8076</td><td>NLD</td><td>1A-3</td></tr>
+<tr class="odd"><td class="lp">445</td><td>Pyzioł Wojciech</td><td>8355, 8356</td><td>PCA</td><td>1208</td></tr>
+<tr class="even"><td class="lp">446</td><td>Rachwalik Marek</td><td>8450, 8455</td><td>DAI</td><td>25230</td></tr>
+<tr class="odd"><td class="lp">447</td><td>Raczyński Łukasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6118, 6110</td><td>DCP</td><td>11122</td></tr>
+<tr class="even"><td class="lp">448</td><td>Radolińska Monika</td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="odd"><td class="lp">449</td><td>Rajski Wojciech</td><td>8450, 8455</td><td>DAI</td><td>25230</td></tr>
+<tr class="even"><td class="lp">450</td><td>Rączka Ewelina <span class="tyt_nauk_black"> (Eng.)</span></td><td>8486</td><td>NLW</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">451</td><td>Reś-Gunia Małgorzata<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8080, 508234387</td><td>DPO</td><td>5302</td></tr>
+<tr class="even"><td class="lp">452</td><td>Rogalski Paweł<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6138</td><td>ZFM, PDPL</td><td>11118</td></tr>
+<tr class="odd"><td class="lp">453</td><td>Rogóż-Duda Agnieszka<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6142</td><td>SKJ</td><td>12104</td></tr>
+<tr class="even"><td class="lp">454</td><td>Romek Małgorzata<span class="tyt_nauk_black"> (M.A.)</span></td><td>8094</td><td>DZI</td><td>4002</td></tr>
+<tr class="odd"><td class="lp">455</td><td>Rozpłochowski  Łukasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8461</td><td>NZ23, KISD</td><td>0316</td></tr>
+<tr class="even"><td class="lp">456</td><td>Równiatka Monika</td><td>6148</td><td>ZFM, PDPL</td><td>12108</td></tr>
+<tr class="odd"><td class="lp">457</td><td>Rózga Andrzej</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="even"><td class="lp">458</td><td>Różak Edyta<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6146</td><td>ZFM, PDPL</td><td>12107</td></tr>
+<tr class="odd"><td class="lp">459</td><td>Różańska Maria<span class="tyt_nauk_black"> (Prof.)</span></td><td>8055</td><td>NZ11</td><td>5227</td></tr>
+<tr class="even"><td class="lp">460</td><td>Różewicz Beata<span class="tyt_nauk_black"> (M.A.)</span></td><td>8313</td><td>DON</td><td>4502</td></tr>
+<tr class="odd"><td class="lp">461</td><td>Ruciński Antoni<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>6203</td><td>CCB, ZFM, PBiR</td><td>11117</td></tr>
+<tr class="even"><td class="lp">462</td><td>Ruiz Richard<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8241</td><td>NZ42</td><td>4401</td></tr>
+<tr class="odd"><td class="lp">463</td><td>Rusin Magdalena</td><td>8113, 451155802</td><td>DZI</td><td>4101</td></tr>
+<tr class="even"><td class="lp">464</td><td>Rusin Teresa</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="odd"><td class="lp">465</td><td>Ruszel Marek</td><td>8480, 8356</td><td>PCA</td><td>1207</td></tr>
+<tr class="even"><td class="lp">466</td><td>Rutkowski Wojciech</td><td>8225</td><td>NZ56</td><td>18A-08</td></tr>
+<tr class="odd"><td class="lp">467</td><td>Rybicki Andrzej<span class="tyt_nauk_black"> (Prof.)</span></td><td>8447</td><td>NZ23</td><td>0310</td></tr>
+<tr class="even"><td class="lp">468</td><td>Ryblewski Radosław<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8469</td><td>NZ41</td><td>4301</td></tr>
+<tr class="odd"><td class="lp">469</td><td>Rydygier (Boberek) Marzena<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>6221</td><td>ZFM, PDPL</td><td>12105</td></tr>
+<tr class="even"><td class="lp">470</td><td>Sala Dariusz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8400</td><td>NZ65</td><td>1B-11a/b</td></tr>
+<tr class="odd"><td class="lp">471</td><td>Sałach Bogusław</td><td>8480, 8403, 8356</td><td>PCA</td><td>1207</td></tr>
+<tr class="even"><td class="lp">472</td><td>Samanta Rupam<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>&nbsp;</td><td>NZ41</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">473</td><td>Sankowska Małgorzata<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8091, 8381</td><td>NZ63</td><td>1221</td></tr>
+<tr class="even"><td class="lp">474</td><td>Sapeta Sebastian<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8155</td><td>NO4, NZ42</td><td>4202</td></tr>
+<tr class="odd"><td class="lp">475</td><td>Sas Wojciech<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8145</td><td>NZ37</td><td>2201</td></tr>
+<tr class="even"><td class="lp">476</td><td>Sas-Bieniarz Anna<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8076</td><td>NLD</td><td>1A-3</td></tr>
+<tr class="odd"><td class="lp">477</td><td>Sądel Michał<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8490</td><td>NZ63</td><td>1214</td></tr>
+<tr class="even"><td class="lp">478</td><td>Schabikowski Mateusz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8439, 8263</td><td>NZ36</td><td>2313</td></tr>
+<tr class="odd"><td class="lp">479</td><td>Schäfer Wolfgang<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8227</td><td>NZ21</td><td>3317</td></tr>
+<tr class="even"><td class="lp">480</td><td>Schmitt Christelle <span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8036</td><td>NZ22</td><td>3212</td></tr>
+<tr class="odd"><td class="lp">481</td><td>Scholz Marek<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8165</td><td>NZ61</td><td>1203A</td></tr>
+<tr class="even"><td class="lp">482</td><td>Sekh Sajid<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8408</td><td>NZ33, KISD</td><td>2302</td></tr>
+<tr class="odd"><td class="lp">483</td><td>Serwicka Anna</td><td>8070</td><td>NLD</td><td>25222</td></tr>
+<tr class="even"><td class="lp">484</td><td>Shah Harsh<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8045</td><td>NZ23</td><td>5319</td></tr>
+<tr class="odd"><td class="lp">485</td><td>Shaiko Maryna</td><td>8479</td><td>DFK</td><td>4608</td></tr>
+<tr class="even"><td class="lp">486</td><td>Shakeri Mohammad Sadegh<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8245</td><td>NZ34</td><td>2202</td></tr>
+<tr class="odd"><td class="lp">487</td><td>Sharma Shreya<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8042</td><td>NZ15, KISD</td><td>0213</td></tr>
+<tr class="even"><td class="lp">488</td><td>Siemek Krzysztof<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8137</td><td>NZ34</td><td>2311</td></tr>
+<tr class="odd"><td class="lp">489</td><td>Sienkiewicz Michał<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8114</td><td>DAI</td><td>25219</td></tr>
+<tr class="even"><td class="lp">490</td><td>Sikorski Roman</td><td>8136</td><td>DOT</td><td>Joinery room 25232</td></tr>
+<tr class="odd"><td class="lp">491</td><td>Sinha Atreyee<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8268</td><td>NZ12</td><td>0303</td></tr>
+<tr class="even"><td class="lp">492</td><td>Siudek Ireneusz</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="odd"><td class="lp">493</td><td>Skotniczna Jadwiga</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="even"><td class="lp">494</td><td>Skrzypek Maciej<span class="tyt_nauk_black"> (Prof.)</span></td><td>8347</td><td>NO4, NZ42</td><td>4204</td></tr>
+<tr class="odd"><td class="lp">495</td><td>Słabik Renata<span class="tyt_nauk_black"> (M.A.)</span></td><td>8316</td><td>DSP</td><td>4509</td></tr>
+<tr class="even"><td class="lp">496</td><td>Sławińska Magdalena<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8025</td><td>NZ14</td><td>0220</td></tr>
+<tr class="odd"><td class="lp">497</td><td>Słomczewski  Wojciech</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="even"><td class="lp">498</td><td>Smolińska Bożena</td><td>&nbsp;</td><td>DOG</td><td>11026</td></tr>
+<tr class="odd"><td class="lp">499</td><td>Smuła Dariusz</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">500</td><td>Sobczyk-Dziarek Roma<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="odd"><td class="lp">501</td><td>Sobieszczyk Paweł<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8481</td><td>NZ34</td><td>2204</td></tr>
+<tr class="even"><td class="lp">502</td><td>Sobkowicz (Kłapyta) Karolina<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6146</td><td>ZFM, PDPL</td><td>12107</td></tr>
+<tr class="odd"><td class="lp">503</td><td>Sopicki Paweł<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8029</td><td>&nbsp;</td><td>0109</td></tr>
+<tr class="even"><td class="lp">504</td><td>Sowa Urszula<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6146</td><td>ZFM, PDPL</td><td>12107</td></tr>
+<tr class="odd"><td class="lp">505</td><td>Sowicki Bogdan</td><td>8435, 8487</td><td>NZ22</td><td>3211</td></tr>
+<tr class="even"><td class="lp">506</td><td>Sowicki Krzysztof </td><td>8455</td><td>DAI</td><td>25230</td></tr>
+<tr class="odd"><td class="lp">507</td><td>Spaleniak Anna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6134, 6135</td><td>ZFM, PDPL</td><td>11120</td></tr>
+<tr class="even"><td class="lp">508</td><td>Sputowska Iwona<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8072</td><td>NZ23</td><td>0314</td></tr>
+<tr class="odd"><td class="lp">509</td><td>Sroka Artur<span class="tyt_nauk_black"> (Eng.)</span></td><td>8480, 8356</td><td>PCA</td><td>1207</td></tr>
+<tr class="even"><td class="lp">510</td><td>Stachurski Kamil<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8385</td><td>NZ56, KISD</td><td>18A-31</td></tr>
+<tr class="odd"><td class="lp">511</td><td>Stan Łukasz</td><td>8493, 533308654</td><td>DOO, NOC</td><td>4405A</td></tr>
+<tr class="even"><td class="lp">512</td><td>Stanecka Ewa<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8021</td><td>NZ14</td><td>0216</td></tr>
+<tr class="odd"><td class="lp">513</td><td>Stanisz Tomasz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8135</td><td>NZ44</td><td>4406</td></tr>
+<tr class="even"><td class="lp">514</td><td>Staniszewska Zyta</td><td>&nbsp;</td><td>DOG</td><td>11026</td></tr>
+<tr class="odd"><td class="lp">515</td><td>Stasica Paulina<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6136</td><td>CCB, ZFM, PBiR, KISD</td><td>11119</td></tr>
+<tr class="even"><td class="lp">516</td><td>Stasielak Jarosław<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8162</td><td>NZ15</td><td>0320</td></tr>
+<tr class="odd"><td class="lp">517</td><td>Staszewski Rafał<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8361</td><td>NZ13</td><td>0204</td></tr>
+<tr class="even"><td class="lp">518</td><td>Stawiarski Jerzy</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">519</td><td>Sternik Małgorzata<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8269</td><td>NZ33</td><td>2315</td></tr>
+<tr class="even"><td class="lp">520</td><td>Stępniak Łukasz</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">521</td><td>Stojak Mieczysław</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">522</td><td>Stopa Piotr<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8285</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">523</td><td>Strączek Piotr<span class="tyt_nauk_black"> (Eng.)</span></td><td>8153, 8114</td><td>DAI</td><td>25208</td></tr>
+<tr class="even"><td class="lp">524</td><td>Stuglik Sławomir<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>&nbsp;</td><td>NZ15</td><td>0106</td></tr>
+<tr class="odd"><td class="lp">525</td><td>Styczeń Jan<span class="tyt_nauk_black"> (Prof.)</span></td><td>8466</td><td>&nbsp;</td><td>3313</td></tr>
+<tr class="even"><td class="lp">526</td><td>Suder Krzysztof<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6118, 6110</td><td>DCP</td><td>11122</td></tr>
+<tr class="odd"><td class="lp">527</td><td>Sulikowski Jacek<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>500044603, 8365</td><td>PCA</td><td>1205</td></tr>
+<tr class="even"><td class="lp">528</td><td>Sułek-Zarosińska Olga<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8202</td><td>NO2</td><td>3310</td></tr>
+<tr class="odd"><td class="lp">529</td><td>Sumera Maciej<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6116, 6110</td><td>DCP</td><td>11123</td></tr>
+<tr class="even"><td class="lp">530</td><td>Sureshkumar Sumesh<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8300</td><td>NZ35, KISD</td><td>2218</td></tr>
+<tr class="odd"><td class="lp">531</td><td>Swakoń Jan<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8087</td><td>NZ62</td><td>1A-2a</td></tr>
+<tr class="even"><td class="lp">532</td><td>Synowska-Kałuża Monika<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8093, 508117931</td><td>NO3</td><td>2217</td></tr>
+<tr class="odd"><td class="lp">533</td><td>Synowski Stanisław</td><td>8122</td><td>DOT</td><td>Electrical workshop</td></tr>
+<tr class="even"><td class="lp">534</td><td>Szczepanek-Dulska Monika<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8082</td><td>NZ52</td><td>3216</td></tr>
+<tr class="odd"><td class="lp">535</td><td>Szczurek Antoni<span class="tyt_nauk_black"> (Prof.)</span></td><td>8212</td><td>NZ21</td><td>3316</td></tr>
+<tr class="even"><td class="lp">536</td><td>Szczypka-Kuc Anna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8250</td><td>NLD</td><td>25306</td></tr>
+<tr class="odd"><td class="lp">537</td><td>Szostek Natalia<span class="tyt_nauk_black"> (Eng.)</span></td><td>8113</td><td>DZI</td><td>5213</td></tr>
+<tr class="even"><td class="lp">538</td><td>Szpiega Klaudia<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8112</td><td>DZI</td><td>4102</td></tr>
+<tr class="odd"><td class="lp">539</td><td>Szumiec Izabela</td><td>8018</td><td>DOG</td><td>1103</td></tr>
+<tr class="even"><td class="lp">540</td><td>Szumiec Jacek</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">541</td><td>Szumska Agnieszka<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8410</td><td>DOR</td><td>5204</td></tr>
+<tr class="even"><td class="lp">542</td><td>Szymańska Agnieszka</td><td>8118</td><td>DOG</td><td>5115</td></tr>
+<tr class="odd"><td class="lp">543</td><td>Śmiałek-Bartyzel Justyna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8286</td><td>NZ55</td><td>3219</td></tr>
+<tr class="even"><td class="lp">544</td><td>Świątkowska-Warkocka Żaneta<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8262</td><td>NZ34</td><td>2306</td></tr>
+<tr class="odd"><td class="lp">545</td><td>Świerblewska Iwona<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8181</td><td>DON</td><td>4503</td></tr>
+<tr class="even"><td class="lp">546</td><td>Świerblewski Jacek<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8092, 8114</td><td>DAI, ZNS</td><td>25215</td></tr>
+<tr class="odd"><td class="lp">547</td><td>Świerk Paweł<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8428</td><td>NZ12</td><td>0107</td></tr>
+<tr class="even"><td class="lp">548</td><td>Świgoń Barbara</td><td>8110</td><td>DZI</td><td>4102</td></tr>
+<tr class="odd"><td class="lp">549</td><td>Tapadar Ananya<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>&nbsp;</td><td>NZ42</td><td>4308B</td></tr>
+<tr class="even"><td class="lp">550</td><td>Tarka Adam</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">551</td><td>Tarkowska Justyna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>&nbsp;</td><td>DOI</td><td>5309</td></tr>
+<tr class="even"><td class="lp">552</td><td>Tarnawski Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8390</td><td>NZ32, MSD</td><td>2305</td></tr>
+<tr class="odd"><td class="lp">553</td><td>Tokarz Joanna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8318</td><td>DSP</td><td>4507</td></tr>
+<tr class="even"><td class="lp">554</td><td>Tomanek Bogusław<span class="tyt_nauk_black"> (Prof.)</span></td><td>&nbsp;</td><td>NZ62</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">555</td><td>Tomczyk Wojciech<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8390</td><td>NZ32</td><td>2305</td></tr>
+<tr class="even"><td class="lp">556</td><td>Topolski Piotr</td><td>8450, 8455</td><td>DAI</td><td>25230</td></tr>
+<tr class="odd"><td class="lp">557</td><td>Torralba Paz Gabriel<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8268</td><td>NZ12</td><td>0303</td></tr>
+<tr class="even"><td class="lp">558</td><td>Torres Andre Goncalves<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8164</td><td>NZ61</td><td>1212</td></tr>
+<tr class="odd"><td class="lp">559</td><td>Tracz Grzegorz<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8325</td><td>NZ61</td><td>1113</td></tr>
+<tr class="even"><td class="lp">560</td><td>Treliński Szymon<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8226</td><td>NZ24, KISD</td><td>3205</td></tr>
+<tr class="odd"><td class="lp">561</td><td>Truchan-Szostek Mirosław </td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">562</td><td>Trzebiński Maciej<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8168</td><td>NZ13</td><td>0207</td></tr>
+<tr class="odd"><td class="lp">563</td><td>Trzupek Adam<span class="tyt_nauk_black"> (Prof.)</span></td><td>8326, 781757329</td><td>NZ14</td><td>0217</td></tr>
+<tr class="even"><td class="lp">564</td><td>Turała Michał<span class="tyt_nauk_black"> (Prof.)</span></td><td>8429</td><td>&nbsp;</td><td>0222</td></tr>
+<tr class="odd"><td class="lp">565</td><td>Turzański Maciej</td><td>8167</td><td>NZ61</td><td>1116A</td></tr>
+<tr class="even"><td class="lp">566</td><td>Tusznio Anna</td><td>8106</td><td>DFK</td><td>4603</td></tr>
+<tr class="odd"><td class="lp">567</td><td>Upadhyaya Sahil<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8491</td><td>NZ23</td><td>0317</td></tr>
+<tr class="even"><td class="lp">568</td><td>Ur Rehman Junaid<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8053</td><td>NZ11, KISD</td><td>0212</td></tr>
+<tr class="odd"><td class="lp">569</td><td>vanHameren Andreas<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8353</td><td>NZ42</td><td>4210</td></tr>
+<tr class="even"><td class="lp">570</td><td>Walewski Marcin</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">571</td><td>Walkowiak Jędrzej</td><td>8335</td><td>NZ61</td><td>1213</td></tr>
+<tr class="even"><td class="lp">572</td><td>Wałaszek Dominika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8214</td><td>NLD</td><td>25224</td></tr>
+<tr class="odd"><td class="lp">573</td><td>Wartak Anna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8114</td><td>DAI</td><td>25214</td></tr>
+<tr class="even"><td class="lp">574</td><td>Wartak Krystian</td><td>8114</td><td>DAI</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">575</td><td>Wartak Marcin<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8114</td><td>DAI</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">576</td><td>Wąchal Przemysław<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8017</td><td>DAI</td><td>25218</td></tr>
+<tr class="odd"><td class="lp">577</td><td>Wąchała Tomasz<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8034</td><td>NZ15</td><td>0319</td></tr>
+<tr class="even"><td class="lp">578</td><td>Wąs Bogdan<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8398, 8393</td><td>NZ64</td><td>1220A</td></tr>
+<tr class="odd"><td class="lp">579</td><td>Wąs Zbigniew<span class="tyt_nauk_black"> (Prof.)</span></td><td>8298</td><td>NZ42</td><td>4209</td></tr>
+<tr class="even"><td class="lp">580</td><td>Werstak Natalia</td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="odd"><td class="lp">581</td><td>Węglarz Władysław<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8256, 8275</td><td>NZ56</td><td>18A-11</td></tr>
+<tr class="even"><td class="lp">582</td><td>Wiącek Urszula<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng)</span></td><td>8163</td><td>NZ61</td><td>1203B</td></tr>
+<tr class="odd"><td class="lp">583</td><td>Wiechczyński Jarosław<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8055</td><td>NZ11</td><td>5227</td></tr>
+<tr class="even"><td class="lp">584</td><td>Wielgat Mikołaj</td><td>8283, 8288</td><td>NZ64, KISD</td><td>6007</td></tr>
+<tr class="odd"><td class="lp">585</td><td>Wiertek Agata</td><td>8111</td><td>DZI</td><td>4102</td></tr>
+<tr class="even"><td class="lp">586</td><td>Wiertek Józef</td><td>8295</td><td>DSK</td><td>5201B</td></tr>
+<tr class="odd"><td class="lp">587</td><td>Wiertek Roman</td><td>8008, 8014</td><td>DAI</td><td>hala skraplarki</td></tr>
+<tr class="even"><td class="lp">588</td><td>Wierzbicki Bogdan</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="odd"><td class="lp">589</td><td>Wierzcholska Alicja<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8274</td><td>NZ12</td><td>0322</td></tr>
+<tr class="even"><td class="lp">590</td><td>Wiesiołek Jerzy</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="odd"><td class="lp">591</td><td>Wilczyński Henryk<span class="tyt_nauk_black"> (Prof.)</span></td><td>8334</td><td>NZ15</td><td>0304</td></tr>
+<tr class="even"><td class="lp">592</td><td>Williams Katarzyna</td><td>&nbsp;</td><td>DOG</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">593</td><td>Winiarz Mateusz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6110</td><td>DCP</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">594</td><td>Wisła Izabela<span class="tyt_nauk_black"> (M.A.)</span></td><td>8344</td><td>DOI, RND</td><td>5224</td></tr>
+<tr class="odd"><td class="lp">595</td><td>Witek Mariusz<span class="tyt_nauk_black"> (Prof.)</span></td><td>8047</td><td>NZ17</td><td>5317</td></tr>
+<tr class="even"><td class="lp">596</td><td>Włoch Bogusław<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8492</td><td>MSD, NZ24</td><td>3305</td></tr>
+<tr class="odd"><td class="lp">597</td><td>Włodek Katarzyna</td><td>8214</td><td>NLD</td><td>25223</td></tr>
+<tr class="even"><td class="lp">598</td><td>Wochnik Agnieszka<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>6136</td><td>CCB, ZFM, PBiR</td><td>11119</td></tr>
+<tr class="odd"><td class="lp">599</td><td>Wojciechowski Kamil<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8152</td><td>NZ65</td><td>1206</td></tr>
+<tr class="even"><td class="lp">600</td><td>Wojtoń Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8058</td><td>NZ17</td><td>0112, 0111</td></tr>
+<tr class="odd"><td class="lp">601</td><td>Wolniak Marcin<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8126, 691113405</td><td>DOT</td><td>1200</td></tr>
+<tr class="even"><td class="lp">602</td><td>Wolny-Marszałek Marta<span class="tyt_nauk_black"> (Prof.)</span></td><td>8323</td><td>NO3, NZ34</td><td>2207</td></tr>
+<tr class="odd"><td class="lp">603</td><td>Wolter Marcin<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8024</td><td>NZ14</td><td>0219</td></tr>
+<tr class="even"><td class="lp">604</td><td>Wosiek Barbara<span class="tyt_nauk_black"> (Prof.)</span></td><td>8429</td><td>NZ14</td><td>0222</td></tr>
+<tr class="odd"><td class="lp">605</td><td>Woźniak Krzysztof<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8430</td><td>NZ14</td><td>0206</td></tr>
+<tr class="even"><td class="lp">606</td><td>Woźnicka Olawia<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8120, 8114</td><td>DOT, DAI</td><td>1B22, 25214</td></tr>
+<tr class="odd"><td class="lp">607</td><td>Woźnicka Urszula<span class="tyt_nauk_black"> (Prof.)</span></td><td>8165</td><td>NO6, NZ61</td><td>1203A</td></tr>
+<tr class="even"><td class="lp">608</td><td>Wójcik Beata<span class="tyt_nauk_black"> (lic.)</span></td><td>8070</td><td>NLD</td><td>25222</td></tr>
+<tr class="odd"><td class="lp">609</td><td>Wójcik Piotr<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8294, 500044596</td><td>DSK</td><td>5202A</td></tr>
+<tr class="even"><td class="lp">610</td><td>Wójcik-Gargula Anna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8335</td><td>NZ61</td><td>1213</td></tr>
+<tr class="odd"><td class="lp">611</td><td>Wójtowiec Anna</td><td>8070</td><td>NLD</td><td>25222</td></tr>
+<tr class="even"><td class="lp">612</td><td>Wroński Paweł<span class="tyt_nauk_black"> (Eng.)</span></td><td>8450, 8455</td><td>DAI</td><td>25230</td></tr>
+<tr class="odd"><td class="lp">613</td><td>Wroński Rafał<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8042</td><td>NZ15, KISD</td><td>0214</td></tr>
+<tr class="even"><td class="lp">614</td><td>Wróbel Andrzej</td><td>8132</td><td>DOT</td><td>1B21</td></tr>
+<tr class="odd"><td class="lp">615</td><td>Wróbel Damian<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8052</td><td>NZ62, KISD</td><td>1A-2</td></tr>
+<tr class="even"><td class="lp">616</td><td>Yadav Shivam<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8408</td><td>NZ33, KISD</td><td>2302</td></tr>
+<tr class="odd"><td class="lp">617</td><td>Yakovliev Artem<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8223</td><td>NZ53</td><td>1A1-8</td></tr>
+<tr class="even"><td class="lp">618</td><td>Zabiegaj Tomasz</td><td>8117</td><td>DOG</td><td>5112</td></tr>
+<tr class="odd"><td class="lp">619</td><td>Zachara Anna<span class="tyt_nauk_black"> (M.A.)</span></td><td>8032, 8031</td><td>DSK</td><td>4506</td></tr>
+<tr class="even"><td class="lp">620</td><td>Zając Wojciech<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8282</td><td>NZ35</td><td>2208</td></tr>
+<tr class="odd"><td class="lp">621</td><td>Zając-Grabiec Anna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>6222</td><td>CCB, ZFM, PBiR</td><td>11116</td></tr>
+<tr class="even"><td class="lp">622</td><td>Zajączkowska Kinga<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8222</td><td>DON</td><td>4502</td></tr>
+<tr class="odd"><td class="lp">623</td><td>Zajdel Dorota<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8427</td><td>DAI, ZNS</td><td>3319</td></tr>
+<tr class="even"><td class="lp">624</td><td>Zalewska Agnieszka<span class="tyt_nauk_black"> (Prof.)</span></td><td>8369</td><td>NZ15</td><td>0308</td></tr>
+<tr class="odd"><td class="lp">625</td><td>Zapotoczny Bartłomiej<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8196</td><td>NZ55</td><td>3215</td></tr>
+<tr class="even"><td class="lp">626</td><td>Zaręba Aleksandra<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8250</td><td>NLD</td><td>25306</td></tr>
+<tr class="odd"><td class="lp">627</td><td>Zarzycki Arkadiusz<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8245</td><td>NZ34</td><td>2202</td></tr>
+<tr class="even"><td class="lp">628</td><td>Zawadzki Paweł</td><td>8112, 500044597</td><td>DZI</td><td>4102</td></tr>
+<tr class="odd"><td class="lp">629</td><td>Zawiejski Leszek<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>&nbsp;</td><td>&nbsp;</td><td>0111</td></tr>
+<tr class="even"><td class="lp">630</td><td>Zdybał Miłosz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8058</td><td>NZ17</td><td>0112</td></tr>
+<tr class="odd"><td class="lp">631</td><td>Zdybał (Drożdż) Magdalena<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8479</td><td>DFK</td><td>4608</td></tr>
+<tr class="even"><td class="lp">632</td><td>Zelek-Łata Małgorzata<span class="tyt_nauk_black"> (M.A.)</span></td><td>8328</td><td>DON</td><td>Library</td></tr>
+<tr class="odd"><td class="lp">633</td><td>Zemła Joanna<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8062</td><td>NZ55</td><td>3214</td></tr>
+<tr class="even"><td class="lp">634</td><td>Ziaja-Motyka Beata<span class="tyt_nauk_black"> (Prof.)</span></td><td>8209</td><td>NZ33</td><td>2314</td></tr>
+<tr class="odd"><td class="lp">635</td><td>Ziarko Grzegorz<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8349</td><td>NZ42, KISD</td><td>4206B</td></tr>
+<tr class="even"><td class="lp">636</td><td>Zielińska-Golik Izabela<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8434, 502227537</td><td>DPR</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">637</td><td>Zieliński Piotr<span class="tyt_nauk_black"> (Prof.)</span></td><td>8204</td><td>NZ31</td><td>2216</td></tr>
+<tr class="even"><td class="lp">638</td><td>Zieliński Piotr<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8211</td><td>NZ35</td><td>2212</td></tr>
+<tr class="odd"><td class="lp">639</td><td>Ziemianin Paulina<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8176</td><td>NLD</td><td>1A-4</td></tr>
+<tr class="even"><td class="lp">640</td><td>Zięba Anna<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6133</td><td>ZFM, STE</td><td>12006</td></tr>
+<tr class="odd"><td class="lp">641</td><td>Zięba Paweł</td><td>8008, 8014</td><td>DAI</td><td>hala skraplarki</td></tr>
+<tr class="even"><td class="lp">642</td><td>Ziębliński Mirosław<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8247</td><td>NZ22</td><td>3207</td></tr>
+<tr class="odd"><td class="lp">643</td><td>Zięborak Zofia<span class="tyt_nauk_black"> (M.A.)</span></td><td>8119, 500044593</td><td>DOI</td><td>5303</td></tr>
+<tr class="even"><td class="lp">644</td><td>Ziółkowska Ewelina<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8446, 8488</td><td>DAI</td><td>25219</td></tr>
+<tr class="odd"><td class="lp">645</td><td>Ziółkowski Sławomir</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+<tr class="even"><td class="lp">646</td><td>Zydek Magdalena<span class="tyt_nauk_black"> (LL.M.)</span></td><td>8119</td><td>ED</td><td>5303</td></tr>
+<tr class="odd"><td class="lp">647</td><td>Żabiński Bartłomiej<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8168</td><td>NZ14</td><td>0207</td></tr>
+<tr class="even"><td class="lp">648</td><td>Żak Zuzanna<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8041</td><td>NZ14, KISD</td><td>5226</td></tr>
+<tr class="odd"><td class="lp">649</td><td>Żarnecki Grzegorz<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8034</td><td>NZ15</td><td>0319</td></tr>
+<tr class="even"><td class="lp">650</td><td>Żurek Wiesław</td><td>8143, 8497</td><td>DOO</td><td>Guardroom</td></tr>
+</table></div>
+</div>
+<div class="page-break"></div>
+<div id="ksiazka">
+<h3>Other phones</h3>
+<div style="overflow-x:auto;"><table>
+<tr><th class="lp">No</th><th>Unit</th><th>Phones</th><th>Departments</th><th>Rooms</th><th>Email</th></tr>
+<tr class="odd"><td class="lp">1</td><td>Accelerator Laboratory</td><td>8372</td><td>NZ53</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">2</td><td>Accelerator Laboratory (dials preparation)</td><td>8372</td><td>NZ53</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">3</td><td>Accelerator Laboratory (measurement room)</td><td>8148</td><td>NZ53</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">4</td><td>Accounting</td><td>8105</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">5</td><td>Accounting - calculation of wages</td><td>8103</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">6</td><td>Accounting - costs</td><td>8479</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">7</td><td>Apparatus Room</td><td>&nbsp;</td><td>NZ21</td><td>3301</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">8</td><td>B14 Measurement Hall</td><td>8166</td><td>NZ61</td><td>B14</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">9</td><td>Boiler room</td><td>8288</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">10</td><td>Calorimetric Laboratory</td><td>8377</td><td>NZ35</td><td>1820</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">11</td><td>Cash Desk</td><td>8106</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">12</td><td>CC1</td><td>8058</td><td>NZ17</td><td>0112</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">13</td><td>Computer Laboratory</td><td>8028</td><td>NZ11, NZ14</td><td>0223</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">14</td><td>Computer Laboratory</td><td>8305</td><td>NZ15</td><td>0302</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">15</td><td>Condensing Unit</td><td>8379</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">16</td><td>CVD Laboratory</td><td>8373</td><td>NZ34</td><td>1108</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">17</td><td>Cyclotron AIC-144 - Console</td><td>8356, 8384</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">18</td><td>Cyclotron AIC-144 control panel</td><td>8156</td><td>PCA</td><td>1100</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">19</td><td>Cyclotron AIC-144 Hall</td><td>8367</td><td>PCA</td><td>1101</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">20</td><td>DAI Secretariat</td><td>8114</td><td>DAI</td><td>25214</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">21</td><td>DAI Workshops</td><td>8455</td><td>DAI</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">22</td><td>Department NZ11 Secretariat</td><td>8010, 8011</td><td>NZ11</td><td>0323</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">23</td><td>Department NZ12 Secretariat</td><td>8010, 8011</td><td>NZ12</td><td>0323</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">24</td><td>Department NZ14 Secretariat</td><td>8010, 8011</td><td>NZ14</td><td>0323</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">25</td><td>Department NZ15 Secretariat</td><td>8010, 8011</td><td>NZ15</td><td>0323</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">26</td><td>Department NZ17 Secretariat</td><td>8010, 8011</td><td>NZ17</td><td>0323</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">27</td><td>Department NZ21 Secretariat</td><td>8210</td><td>NZ21</td><td>3317</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">28</td><td>Department NZ22 Secretariat</td><td>8202</td><td>NZ22</td><td>3310</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">29</td><td>Department NZ23 Secretariat</td><td>8210</td><td>NZ23</td><td>3317</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">30</td><td>Department NZ33 Secretariat</td><td>8408</td><td>NZ33</td><td>2302</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">31</td><td>Department NZ41 Secretariat</td><td>8221</td><td>NZ41</td><td>4201</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">32</td><td>Department NZ42 Secretariat</td><td>8221</td><td>NZ42</td><td>4201</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">33</td><td>Department NZ44 Secretariat</td><td>8221</td><td>NZ44</td><td>4201</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">34</td><td>Department NZ52 Secretariat</td><td>8088</td><td>NZ52</td><td>3307</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">35</td><td>Department NZ56 Secretariat</td><td>8253</td><td>NZ56</td><td>18A-13</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">36</td><td>Department NZ61 Secretariat</td><td>8415</td><td>NZ61</td><td>1204</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">37</td><td>Department NZ64 Secretariat</td><td>8415</td><td>NZ64</td><td>1204</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">38</td><td>Directors Office</td><td>8200</td><td>DOI</td><td>5309</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">39</td><td>Division NO1 Secretariat</td><td>8010, 8011</td><td>NO1</td><td>0323</td><td>hepsec@ifj.edu.pl</td></tr>
+<tr class="even"><td class="lp">40</td><td>Division NO2 Secretariat</td><td>8202</td><td>NO2</td><td>3310</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">41</td><td>Division NO3 Secretariat</td><td>8093</td><td>NO3</td><td>2217</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">42</td><td>Division NO4 Secretariat</td><td>8002, 8221</td><td>NO4</td><td>4201</td><td>NO4.sekretariat@ifj.edu.pl</td></tr>
+<tr class="odd"><td class="lp">43</td><td>Division NO5 Secretariat</td><td>8088, 8345</td><td>NO5</td><td>3307</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">44</td><td>Division NO6 Secretariat</td><td>8415</td><td>NO6</td><td>1204</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">45</td><td>DOT Secretariat</td><td>8120</td><td>DOT</td><td>1B22</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">46</td><td>Electricians cloakroom</td><td>8126</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">47</td><td>Electricians workshop</td><td>8122</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">48</td><td>Electronic Laboratory</td><td>8043</td><td>NZ11</td><td>0202</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">49</td><td>Electronic Laboratory</td><td>8039</td><td>&nbsp;</td><td>4405 A</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">50</td><td>Experimental Hall</td><td>8075</td><td>PCA</td><td>1102</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">51</td><td>General Office</td><td>7, 8000, 8144, 8319, 8472</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">52</td><td>Guardroom</td><td>8143</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">53</td><td>Guardroom - passage</td><td>8497</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">54</td><td>Hala Eksperymentalna CCB</td><td>6120</td><td>CCB</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">55</td><td>High-voltage substation</td><td>8150</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">56</td><td>Hotel Passage</td><td>8311</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">57</td><td>HR Office</td><td>8315</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">58</td><td>I pracownia badań magnetycznych - Lake Shore</td><td>8478</td><td>NZ37</td><td>1821</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">59</td><td>IFJ PAN Archive</td><td>8238</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">60</td><td>II pracownia badań magnetycznych - SQUID</td><td>8343</td><td>NZ34, NZ37</td><td>1802</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">61</td><td>Implantator</td><td>8373, 8374</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">62</td><td>Implantator - Console</td><td>8350, 8373</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">63</td><td>Individual and Enviromental Dosimetry Laboratory</td><td>8457</td><td>&nbsp;</td><td>1A-1, 1A-2</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">64</td><td>Infrared Fourier Spectroscopy Laboratory</td><td>8140</td><td>NZ35</td><td>18A-06</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">65</td><td>Ion Implantation Laboratory</td><td>8373</td><td>NZ34</td><td>1108</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">66</td><td>KISD Secretariat</td><td>8344</td><td>RND</td><td>5224</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">67</td><td>Lab. for Calibration of Radiation Protection Instruments</td><td>8486</td><td>NZ63</td><td>0</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">68</td><td>Laboratorium Chromatografii i Analizy Absorbcji Gazowej</td><td>&nbsp;</td><td>NZ36</td><td>18-07</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">69</td><td>Laboratorium Elektrochemii i Korozji</td><td>8368</td><td>NZ55</td><td>2210</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">70</td><td>Laboratorium Mikrowiązki Promieniowania X</td><td>8372</td><td>NZ53</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">71</td><td>Laboratorium Obrazowania Spektroskopowego Analiza preparatów cytogenetycznych</td><td>8218</td><td>NZ52</td><td>5217</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">72</td><td>Laboratorium Obrazowania Spektroskopowego Hodowla komórek</td><td>8379</td><td>NZ52, NZ55</td><td>3116</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">73</td><td>Laboratorium Obrazowania Spektroskopowego Mikroskop Sił Atomowych (AFM)</td><td>8378</td><td>NZ52, NZ55</td><td>3115</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">74</td><td>Laboratorium Obrazowania Spektroskopowego Preparatyka próbek</td><td>8172</td><td>NZ52</td><td>3113</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">75</td><td>Laboratorium Obrazowania Spektroskopowego Spektrometr nano-IR2</td><td>8173</td><td>NZ52</td><td>3112</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">76</td><td>Laboratorium Obrazowania Spektroskopowego Spektrometr Raman-AFM</td><td>8407</td><td>NZ52</td><td>3111</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">77</td><td>Laboratorium Obrazowania Spektroskopowego Spektrometry FT-IR</td><td>8473</td><td>NZ52</td><td>3114</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">78</td><td>Laboratorium Obrazowania Spektroskopowego System RT-PCR i spektrometr UV-VIS</td><td>8218</td><td>NZ52</td><td>5218</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">79</td><td>Laboratorium Syntez Nanomateriałów</td><td>8263</td><td>NZ36</td><td>2301</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">80</td><td>Laboratory</td><td>8057</td><td>NZ11</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">81</td><td>laboratory</td><td>8032</td><td>NZ17</td><td>0111</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">82</td><td>Laboratory of Radiometric Expertise</td><td>517904204, 8330, 8332</td><td>NLR</td><td>3201</td><td>radon@ifj.edu.pl</td></tr>
+<tr class="odd"><td class="lp">83</td><td>Laser Laboratory</td><td>8350</td><td>NZ34</td><td>1109</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">84</td><td>Laundry</td><td>8116</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">85</td><td>Library</td><td>8328</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">86</td><td>Local Computer Network Administrator</td><td>8291, 8295</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">87</td><td>Low-voltage substation</td><td>8299</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">88</td><td>Low-voltage switchgear</td><td>8151</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">89</td><td>Magnetic Measurements Laboratory</td><td>8343</td><td>NZ34</td><td>1802</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">90</td><td>Measurement Room</td><td>8079</td><td>NZ63</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">91</td><td>Mechanic Worskop</td><td>8132, 8134</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">92</td><td>Mechanical workshop</td><td>8352</td><td>PCA</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">93</td><td>Mechanics' dining room</td><td>8133</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">94</td><td>Microlaboratory</td><td>8268</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">95</td><td>Moessbauer Laboratory</td><td>8067</td><td>NZ34</td><td>1801</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">96</td><td>NZ12 Computer Room</td><td>8073</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">97</td><td>NZ12 Ph.D. student's room</td><td>8034</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">98</td><td>NZ16 Dark-Room</td><td>8381</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">99</td><td>NZ22 Computer Roon</td><td>8324</td><td>NZ22</td><td>3107</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">100</td><td>NZ31 Ph.D. student's room</td><td>8138</td><td>&nbsp;</td><td>0221</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">101</td><td>NZ41 Ph.D. student's room</td><td>8239</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">102</td><td>Outdoor workers</td><td>8117</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">103</td><td>Phone Conservator</td><td>8000, 8125</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">104</td><td>Plumber</td><td>8132, 8134</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">105</td><td>Pokój Planowania Terapii</td><td>&nbsp;</td><td>CCB</td><td>12106</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">106</td><td>Pokój pomiarowy bud.6 - NZ64</td><td>8288</td><td>NZ64</td><td>6013</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">107</td><td>Pokój pomiarowy fizyki jądrowej w CCB</td><td>8186</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">108</td><td>Pokój pomiarowy NZ61</td><td>8333</td><td>NZ61</td><td>1218B</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">109</td><td>Pokój spektormetru całego ciała SCC</td><td>8159</td><td>NZ64</td><td>5109</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">110</td><td>Pracownia anihilacji pozytonów</td><td>&nbsp;</td><td>NZ34</td><td>18A-04</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">111</td><td>Pracownia Inżynierii Monokryształów</td><td>8287</td><td>NZ63</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">112</td><td>Pracownia mikroskopu polaryzacyjnego</td><td>&nbsp;</td><td>NZ35</td><td>2205</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">113</td><td>Pracownia Planowania Leczenia</td><td>6133</td><td>CCB</td><td>12006</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">114</td><td>prof. Jan A. Czubek Plasma Focus Laboratory</td><td>8167</td><td>NZ61</td><td>1116A</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">115</td><td>Pulpit Cyklotronu Proteus C-235</td><td>6110</td><td>DCP</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">116</td><td>Raman Spectroscopy Laboratory</td><td>8096</td><td>NZ34</td><td>5203</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">117</td><td>Rentgen Laboratory</td><td>8026</td><td>NZ34, NZ35</td><td>18A-05</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">118</td><td>Repair Hall</td><td>8069</td><td>PCA</td><td>1107</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">119</td><td>Sala Seminaryjna</td><td>&nbsp;</td><td>NZ42</td><td>4208</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">120</td><td>Sala Seminaryjna DAI</td><td>8499</td><td>DAI</td><td>25220</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">121</td><td>Scientific Council Secretariat</td><td>8301</td><td>RND</td><td>5225</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">122</td><td>Sekretariat Zastępcy Dyrektora ds. Naukowo-Technicznych</td><td>8427</td><td>TD</td><td>3319</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">123</td><td>Seminar Room</td><td>8242</td><td>NZ22</td><td>3109</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">124</td><td>Seminar Room</td><td>&nbsp;</td><td>NZ44</td><td>4402</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">125</td><td>Solidarność</td><td>8285</td><td>&nbsp;</td><td>0323</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">126</td><td>Sterownia Cyklotronu (CCB)</td><td>8195</td><td>DCP</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">127</td><td>Sterownia Cyklotronu Proteus C-235</td><td>&nbsp;</td><td>CCB</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">128</td><td>Sterownia Gantry I</td><td>&nbsp;</td><td>CCB</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">129</td><td>Sterownia Gantry II</td><td>&nbsp;</td><td>CCB</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">130</td><td>Sterownia Terapii Oka</td><td>&nbsp;</td><td>CCB</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">131</td><td>Students</td><td>8308</td><td>&nbsp;</td><td>0316</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">132</td><td>Surface Science Laboratory</td><td>8203</td><td>NZ34</td><td>1823</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">133</td><td>Switchboard</td><td>7</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">134</td><td>Tennis Courts</td><td>8471</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">135</td><td>Tents</td><td>8420</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">136</td><td>The cleaners</td><td>8118</td><td>&nbsp;</td><td>5112</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">137</td><td>UHV Laboratory</td><td>8296</td><td>NZ34</td><td>1822</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">138</td><td>X-Ray Laboratory</td><td>8026</td><td>NZ34, NZ35</td><td>18A-05</td><td>&nbsp;</td></tr>
+<tr class="odd"><td class="lp">139</td><td>Zasilacze AIC-144</td><td>8403</td><td>PCA</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+</table></div>
+</div>
+<div class="page-break"></div>
+<div id="ksiazka">
+<h3>Business phones</h3>
+<div style="overflow-x:auto;"><table>
+<tr><th class="lp">No</th><th>Person</th><th>Phones</th><th>Departments</th><th>Rooms</th></tr>
+<tr class="odd"><td class="lp">1</td><td>Isakiewicz Jerzy</td><td>500044602, 8113</td><td>DZI</td><td>4101</td></tr>
+<tr class="even"><td class="lp">2</td><td>Bator-Odynokow Monika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>515294564, 8317</td><td>DSP</td><td>4508B</td></tr>
+<tr class="odd"><td class="lp">3</td><td>Synowska-Kałuża Monika<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8093, 508117931</td><td>NO3</td><td>2217</td></tr>
+<tr class="even"><td class="lp">4</td><td>Karaś Krzysztof<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8120, 8460, 698664403</td><td>DOT</td><td>1B23</td></tr>
+<tr class="odd"><td class="lp">5</td><td>Kamińska-Januś Agnieszka<span class="tyt_nauk_black"> (Ph.D.)</span></td><td>8200, 508346437</td><td>DOI</td><td>5309</td></tr>
+<tr class="even"><td class="lp">6</td><td>Markowicz Maciej<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8434, 502138719</td><td>DPR</td><td>5303</td></tr>
+<tr class="odd"><td class="lp">7</td><td>Natkaniec Zbigniew<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>500044601, 8044, 8043</td><td>DSK</td><td>0202, 0112</td></tr>
+<tr class="even"><td class="lp">8</td><td>Czarny Anna</td><td>8321, 500044608</td><td>DOI</td><td>4506</td></tr>
+<tr class="odd"><td class="lp">9</td><td>Bocian Dariusz<span class="tyt_nauk_black"> (Assoc.&nbsp;Prof.)</span></td><td>8463, 698664402</td><td>TD, DAI, ZNS</td><td>3318</td></tr>
+<tr class="even"><td class="lp">10</td><td>Sulikowski Jacek<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>500044603, 8365</td><td>PCA</td><td>1205</td></tr>
+<tr class="odd"><td class="lp">11</td><td>Wójcik Piotr<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8294, 500044596</td><td>DSK</td><td>5202A</td></tr>
+<tr class="even"><td class="lp">12</td><td>Krzysiek Mateusz<span class="tyt_nauk_black"> (Ph.D.,&nbsp;Eng.)</span></td><td>8410, 515294562</td><td>DOR</td><td>5204</td></tr>
+<tr class="odd"><td class="lp">13</td><td>Perek Dominika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8115, 506112252</td><td>DOG</td><td>4101</td></tr>
+<tr class="even"><td class="lp">14</td><td>Zawadzki Paweł</td><td>8112, 500044597</td><td>DZI</td><td>4102</td></tr>
+<tr class="odd"><td class="lp">15</td><td>Zielińska-Golik Izabela<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>8434, 502227537</td><td>DPR</td><td>&nbsp;</td></tr>
+<tr class="even"><td class="lp">16</td><td>Pogwizd Tomasz<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8129, 668639189</td><td>DOT</td><td>3320</td></tr>
+<tr class="odd"><td class="lp">17</td><td>Glaz Gabriela<span class="tyt_nauk_black"> (M.Sc.)</span></td><td>6200, 500044606</td><td>CCB</td><td>12102</td></tr>
+<tr class="even"><td class="lp">18</td><td>Kałat Karolina<span class="tyt_nauk_black"> (M.A.)</span></td><td>6200, 500044606</td><td>CCB</td><td>12102</td></tr>
+<tr class="odd"><td class="lp">19</td><td>Reś-Gunia Małgorzata<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8080, 508234387</td><td>DPO</td><td>5302</td></tr>
+<tr class="even"><td class="lp">20</td><td>Zięborak Zofia<span class="tyt_nauk_black"> (M.A.)</span></td><td>8119, 500044593</td><td>DOI</td><td>5303</td></tr>
+<tr class="odd"><td class="lp">21</td><td>Guguła Konrad<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>6225, 6110, 664305644</td><td>DCP</td><td>11124</td></tr>
+<tr class="even"><td class="lp">22</td><td>Pasieka Agnieszka<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8410, 696787125</td><td>DOR</td><td>5204</td></tr>
+<tr class="odd"><td class="lp">23</td><td>Kwiatek Wojciech<span class="tyt_nauk_black"> (Prof.)</span></td><td>8235, 691111600</td><td>NO5, NZ52, NZ53</td><td>3306</td></tr>
+<tr class="even"><td class="lp">24</td><td>Handzlik Dominika<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8415, 691113374</td><td>NO6</td><td>1204</td></tr>
+<tr class="odd"><td class="lp">25</td><td>Dziewoński Paweł</td><td>8125, 664305677</td><td>DSK</td><td>5208</td></tr>
+<tr class="even"><td class="lp">26</td><td>Janik Aleksandra<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8126, 691110618</td><td>DOT</td><td>1200</td></tr>
+<tr class="odd"><td class="lp">27</td><td>Trzupek Adam<span class="tyt_nauk_black"> (Prof.)</span></td><td>8326, 781757329</td><td>NZ14</td><td>0217</td></tr>
+<tr class="even"><td class="lp">28</td><td>Stan Łukasz</td><td>8493, 533308654</td><td>DOO, NOC</td><td>4405A</td></tr>
+<tr class="odd"><td class="lp">29</td><td>Rusin Magdalena</td><td>8113, 451155802</td><td>DZI</td><td>4101</td></tr>
+<tr class="even"><td class="lp">30</td><td>Miśkiewicz Grzegorz<span class="tyt_nauk_black"> (M.A.)</span></td><td>8434, 502772892</td><td>DPR</td><td>5303</td></tr>
+<tr class="odd"><td class="lp">31</td><td>Wolniak Marcin<span class="tyt_nauk_black"> (M.Sc.,&nbsp;Eng.)</span></td><td>8126, 691113405</td><td>DOT</td><td>1200</td></tr>
+<tr class="even"><td class="lp">32</td><td>Krupnik Kinga<span class="tyt_nauk_black"> (M.A.)</span></td><td>8177, 691115715</td><td>DOI</td><td>5309</td></tr>
+</table></div>
+</div>
+
+</body>
+</html>
